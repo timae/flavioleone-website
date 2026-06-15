@@ -20,6 +20,9 @@ abstraction:
   sit **grayscale and bloom into colour** on hover.
 - **Drag-scroll reels** for each project, a **custom cursor** that swells to "view"
   over imagery, scroll-reveal, and a **collage ⇄ index** toggle on Work.
+- An **immersive lightbox**: a giant ghost index number, the photo revealed with a
+  clip-path wipe, a serif caption, and a red-accented **filmstrip** — driven by
+  click, arrows, scroll and swipe.
 - Self-hosted **Fraunces** serif + system grotesque; kinetic *laufschrift* marquees
   carried over from flavioleone.ch.
 
@@ -130,6 +133,3 @@ the masonry reserves space without reflow.
 
 Bio text and contact details (`hello@flavioleone.ch`, `@flavio.leone`) mirror the
 live site — adjust to taste.
-
-Bio text and contact details (`hello@flavioleone.ch`, `@flavio.leone`) mirror the
-current flavioleone.com — adjust to taste.

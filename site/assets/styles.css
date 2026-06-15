@@ -177,16 +177,31 @@ body::after {
 .site-footer .col span { font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
 .site-footer a:hover { color: var(--red); }
 
-/* ---------- Lightbox ---------- */
-.lightbox { position: fixed; inset: 0; z-index: 600; display: none; background: rgba(8,8,9,.97); }
-.lightbox.on { display: grid; place-items: center; }
-.lightbox img { max-width: 94vw; max-height: 86vh; width: auto; object-fit: contain; }
-.lightbox figcaption { position: fixed; bottom: 1.2rem; left: 0; right: 0; text-align: center; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
-.lb-btn { position: fixed; padding: 1rem; z-index: 610; color: #fff; }
-.lb-close { top: .6rem; right: var(--gutter); font-size: 11px; letter-spacing: .2em; text-transform: uppercase; }
-.lb-prev, .lb-next { top: 50%; transform: translateY(-50%); font-family: var(--serif); font-size: 2.6rem; }
-.lb-prev { left: .4rem; } .lb-next { right: .4rem; }
-.lb-btn:hover { color: var(--red); }
+/* ---------- Lightbox (immersive) ---------- */
+.lightbox { position: fixed; inset: 0; z-index: 600; display: none; opacity: 0; background: radial-gradient(120% 100% at 70% 0%, #131214 0%, #070708 70%); transition: opacity .45s ease; }
+.lightbox.on { display: block; opacity: 1; }
+.lb-no { position: absolute; top: clamp(-1rem, 1vw, 1rem); left: clamp(.4rem, 2vw, 2rem); z-index: 1; pointer-events: none; mix-blend-mode: difference; color: #fff; font-family: var(--serif); font-optical-sizing: auto; font-weight: 300; font-size: clamp(7rem, 30vw, 30rem); line-height: .74; letter-spacing: -.05em; }
+.lb-no.swap { animation: lbno .6s cubic-bezier(.2,.7,.2,1); }
+@keyframes lbno { from { transform: translateY(16%) skewY(4deg); opacity: 0; } to { transform: none; opacity: 1; } }
+.lb-frame { position: absolute; inset: 0 0 5rem 0; display: grid; place-items: center; padding: clamp(2.5rem, 6vw, 5rem); z-index: 2; }
+.lb-frame img { max-width: min(84vw, 1150px); max-height: 78vh; width: auto; object-fit: contain; box-shadow: 0 50px 130px rgba(0,0,0,.65); -webkit-user-drag: none; }
+.lb-frame img.swap { animation: lbimg .62s cubic-bezier(.2,.7,.2,1); }
+@keyframes lbimg { from { clip-path: inset(0 0 100% 0); opacity: .15; transform: scale(1.05); } to { clip-path: inset(0 0 0 0); opacity: 1; transform: none; } }
+.lb-side { position: absolute; right: var(--gutter); bottom: clamp(5.4rem, 10vw, 7rem); z-index: 3; text-align: right; mix-blend-mode: difference; color: #fff; max-width: 60vw; }
+.lb-ttl { font-family: var(--serif); font-optical-sizing: auto; font-size: clamp(1.4rem, 3.6vw, 2.8rem); text-transform: lowercase; line-height: 1; }
+.lb-dim { margin-top: .45rem; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: #c7c2ba; }
+.lb-arrow { position: absolute; top: calc(50% - 2.5rem); z-index: 4; font-family: var(--serif); font-size: clamp(2.4rem, 4vw, 3.4rem); color: #fff; padding: 1.2rem; opacity: .6; transition: opacity .2s, color .2s; }
+.lb-arrow:hover { opacity: 1; color: var(--red); }
+.lb-p { left: .2rem; } .lb-n { right: .2rem; }
+.lb-x { position: absolute; top: clamp(.8rem, 2vw, 1.5rem); right: var(--gutter); z-index: 5; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: #fff; mix-blend-mode: difference; }
+.lb-x:hover { color: var(--red); }
+.lb-strip { position: absolute; left: 0; right: 0; bottom: 0; z-index: 4; display: flex; gap: .4rem; padding: .6rem var(--gutter) .9rem; overflow-x: auto; scrollbar-width: none; background: linear-gradient(0deg, rgba(0,0,0,.65), transparent); }
+.lb-strip::-webkit-scrollbar { display: none; }
+.lb-strip img { height: 60px; width: auto; flex: 0 0 auto; object-fit: cover; opacity: .32; filter: grayscale(1); transition: opacity .2s, filter .2s, transform .2s; }
+.lb-strip img:hover { opacity: .8; transform: translateY(-3px); }
+.lb-strip img.cur { opacity: 1; filter: none; box-shadow: 0 0 0 2px var(--red); }
+@media (max-width: 640px) { .lb-side { left: var(--gutter); right: var(--gutter); text-align: left; } .lb-strip { display: none; } .lb-frame { inset: 0 0 3rem 0; } }
+@media (prefers-reduced-motion: reduce) { .lb-no.swap, .lb-frame img.swap { animation: none; } }
 
 @media (max-width: 640px) {
     .nav-links { display: none; }

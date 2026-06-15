@@ -150,22 +150,69 @@ function initReveal() {
     els.forEach(e => io.observe(e));
 }
 
-// ---------- Lightbox ----------
-let lb, lbImg, lbCap;
+// ---------- Lightbox (immersive) ----------
+let lb, lbNo, lbImg, lbTtl, lbDim, lbStrip, lbWheelLock = false, lbStripFor = null;
 function initLightbox() {
     lb = document.getElementById('lightbox');
     if (!lb) return;
-    lbImg = lb.querySelector('img'); lbCap = lb.querySelector('figcaption');
-    lb.querySelector('.lb-close').addEventListener('click', closeLightbox);
-    lb.querySelector('.lb-prev').addEventListener('click', e => { e.stopPropagation(); step(-1); });
-    lb.querySelector('.lb-next').addEventListener('click', e => { e.stopPropagation(); step(1); });
-    lb.addEventListener('click', e => { if (e.target === lb) closeLightbox(); });
+    lb.innerHTML =
+        '<div class="lb-no" aria-hidden="true"></div>' +
+        '<button class="lb-x" data-cursor="view" aria-label="Close">close</button>' +
+        '<div class="lb-frame"><img src="" alt=""></div>' +
+        '<div class="lb-side"><div class="lb-ttl serif"></div><div class="lb-dim"></div></div>' +
+        '<button class="lb-arrow lb-p" data-cursor="view" aria-label="Previous">&lsaquo;</button>' +
+        '<button class="lb-arrow lb-n" data-cursor="view" aria-label="Next">&rsaquo;</button>' +
+        '<div class="lb-strip" aria-hidden="true"></div>';
+    lbNo = lb.querySelector('.lb-no');
+    lbImg = lb.querySelector('.lb-frame img');
+    lbTtl = lb.querySelector('.lb-ttl');
+    lbDim = lb.querySelector('.lb-dim');
+    lbStrip = lb.querySelector('.lb-strip');
+
+    lb.querySelector('.lb-x').addEventListener('click', closeLightbox);
+    lb.querySelector('.lb-p').addEventListener('click', e => { e.stopPropagation(); step(-1); });
+    lb.querySelector('.lb-n').addEventListener('click', e => { e.stopPropagation(); step(1); });
+    lb.addEventListener('click', e => { if (e.target === lb || e.target.classList.contains('lb-frame')) closeLightbox(); });
     addEventListener('keydown', e => { if (!lb.classList.contains('on')) return; if (e.key === 'Escape') closeLightbox(); if (e.key === 'ArrowLeft') step(-1); if (e.key === 'ArrowRight') step(1); });
+    lb.addEventListener('wheel', e => { if (!lb.classList.contains('on')) return; e.preventDefault(); if (lbWheelLock) return; const d = e.deltaY + e.deltaX; if (Math.abs(d) < 8) return; lbWheelLock = true; step(d > 0 ? 1 : -1); setTimeout(() => lbWheelLock = false, 380); }, { passive: false });
     let x0 = 0;
     lb.addEventListener('touchstart', e => x0 = e.changedTouches[0].screenX, { passive: true });
     lb.addEventListener('touchend', e => { const d = x0 - e.changedTouches[0].screenX; if (Math.abs(d) > 50) step(d > 0 ? 1 : -1); }, { passive: true });
 }
-function openLightbox(list, i) { if (!list || !list.length) return; currentList = list; currentIndex = i; paint(); lb.classList.add('on'); document.body.style.overflow = 'hidden'; }
+
+function buildStrip(list) {
+    lbStrip.innerHTML = '';
+    list.forEach((im, i) => {
+        const t = document.createElement('img');
+        t.src = im.src; t.alt = ''; t.loading = 'lazy';
+        t.addEventListener('click', () => { currentIndex = i; paint(); });
+        lbStrip.appendChild(t);
+    });
+    lbStripFor = list;
+}
+
+function openLightbox(list, i) {
+    if (!list || !list.length) return;
+    currentList = list; currentIndex = i;
+    if (lbStripFor !== list) buildStrip(list);
+    paint(); lb.classList.add('on'); document.body.style.overflow = 'hidden';
+}
 function closeLightbox() { lb.classList.remove('on'); document.body.style.overflow = ''; }
 function step(d) { currentIndex = (currentIndex + d + currentList.length) % currentList.length; paint(); }
-function paint() { const im = currentList[currentIndex]; lbImg.src = im.src; lbImg.alt = im.alt || ''; lbCap.textContent = `${clean(im.alt)}  ·  ${currentIndex + 1} / ${currentList.length}`; [-1, 1].forEach(o => { const n = currentList[currentIndex + o]; if (n) { const p = new Image(); p.src = n.src; } }); }
+
+function reanim(el, cls) { el.classList.remove(cls); void el.offsetWidth; el.classList.add(cls); }
+
+function paint() {
+    const im = currentList[currentIndex];
+    lbImg.src = im.src; lbImg.alt = im.alt || '';
+    lbNo.textContent = String(currentIndex + 1).padStart(2, '0');
+    lbTtl.textContent = (clean(im.alt) || 'untitled').toLowerCase();
+    lbDim.textContent = `${im.w && im.h ? im.w + ' × ' + im.h + '   ·   ' : ''}${currentIndex + 1} / ${currentList.length}`;
+    reanim(lbImg, 'swap'); reanim(lbNo, 'swap');
+    // highlight + reveal current thumb
+    [...lbStrip.children].forEach((t, i) => t.classList.toggle('cur', i === currentIndex));
+    const cur = lbStrip.children[currentIndex];
+    if (cur) cur.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
+    // preload neighbours
+    [-1, 1].forEach(o => { const n = currentList[currentIndex + o]; if (n) { const p = new Image(); p.src = n.src; } });
+}

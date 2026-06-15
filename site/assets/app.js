@@ -41,6 +41,30 @@ function render() {
     initViewToggle();
     initReveal();
     hoverTargets();
+    initScrollBloom();
+}
+
+// ---------- Scroll-driven colour bloom (touch: no hover to trigger it) ----------
+function initScrollBloom() {
+    if (!matchMedia('(hover: none), (pointer: coarse)').matches) return;
+    const shards = () => document.querySelectorAll('.shard');
+    let ticking = false;
+    function update() {
+        ticking = false;
+        const vh = innerHeight, mid = vh / 2;
+        shards().forEach(el => {
+            const b = el.getBoundingClientRect();
+            if (b.bottom < -40 || b.top > vh + 40) return;
+            const c = b.top + b.height / 2;
+            // 0 when centred, 1 toward the viewport edges → grayscale amount
+            const g = Math.min(1, Math.abs(c - mid) / mid * 1.15);
+            el.style.setProperty('--g', g.toFixed(2));
+        });
+    }
+    const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
+    addEventListener('scroll', onScroll, { passive: true });
+    addEventListener('resize', onScroll, { passive: true });
+    update();
 }
 
 // ---------- Custom cursor ----------

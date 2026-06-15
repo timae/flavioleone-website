@@ -23,6 +23,8 @@ abstraction:
 - An **immersive lightbox**: a giant ghost index number, the photo revealed with a
   clip-path wipe, a serif caption, and a red-accented **filmstrip** — driven by
   click, arrows, scroll and swipe.
+- On **touch devices** (no hover/cursor), the collage instead **blooms from
+  grayscale to colour as each image scrolls toward the centre** of the screen.
 - Self-hosted **Fraunces** serif + system grotesque; kinetic *laufschrift* marquees
   carried over from flavioleone.ch.
 

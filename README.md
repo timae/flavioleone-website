@@ -127,6 +127,3 @@ the masonry reserves space without reflow.
 
 Bio text and contact details (`hello@flavioleone.ch`, `@flavio.leone`) mirror the
 live site — adjust to taste.
-
-Bio text and contact details (`hello@flavioleone.ch`, `@flavio.leone`) mirror the
-current flavioleone.com — adjust to taste.

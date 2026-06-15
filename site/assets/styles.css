@@ -72,7 +72,7 @@ body::after {
 .hero { position: relative; min-height: 100svh; display: flex; align-items: center; overflow: hidden; }
 .hero-montage { position: absolute; inset: 0; z-index: 0; }
 .hero-montage::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,10,11,.5) 0%, rgba(10,10,11,.66) 55%, rgba(10,10,11,.82) 100%); }
-.hero-montage img { position: absolute; object-fit: cover; filter: saturate(1.05) contrast(1.02); opacity: 0; transition: opacity 1.2s ease; }
+.hero-montage img { position: absolute; object-fit: cover; filter: saturate(1.05) contrast(1.02); opacity: 0; transition: opacity .8s ease; }
 .hero-montage img.on { opacity: .92; }
 .hero-montage img:nth-child(1) { width: 42vw; height: 60vh; right: 3vw; top: 20vh; }
 .hero-montage img:nth-child(2) { width: 22vw; height: 30vh; left: 4vw; top: 13vh; }

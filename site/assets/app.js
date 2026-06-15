@@ -89,23 +89,34 @@ function hoverTargets() {
 
 // ---------- Hero montage ----------
 function heroMontage(stage, images) {
-    const set = images.slice(0, 3);
+    const pool = images.filter(im => im && im.src);
+    if (!pool.length) return;
     stage.innerHTML = '';
-    set.forEach(im => {
+    // three slots, each tracking which pool index it currently shows
+    const slots = [];
+    for (let k = 0; k < 3 && k < pool.length; k++) {
         const img = document.createElement('img');
-        img.src = im.src; img.alt = im.alt || ''; img.classList.add('on');
+        img.src = pool[k].src; img.alt = pool[k].alt || ''; img.classList.add('on');
         stage.appendChild(img);
-    });
-    // gently cycle the big image through the reel
-    const big = stage.querySelector('img');
-    if (big && images.length > 3 && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        let i = 0;
-        setInterval(() => {
-            i = (i + 1) % images.length;
-            big.classList.remove('on');
-            setTimeout(() => { big.src = images[i].src; big.alt = images[i].alt || ''; big.classList.add('on'); }, 600);
-        }, 4600);
+        slots.push({ el: img, idx: k });
     }
+    if (pool.length <= 3 || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    let ptr = 3 % pool.length;
+    const visible = () => slots.map(s => s.idx);
+    function advance(slot) {
+        let guard = 0;
+        while (visible().includes(ptr) && guard < pool.length) { ptr = (ptr + 1) % pool.length; guard++; }
+        const pick = ptr, im = pool[pick];
+        ptr = (ptr + 1) % pool.length;
+        slot.el.classList.remove('on');                 // fade out
+        setTimeout(() => {                               // swap once hidden, fade back in
+            slot.el.src = im.src; slot.el.alt = im.alt || ''; slot.idx = pick;
+            slot.el.classList.add('on');
+        }, 820);
+    }
+    // each slot cycles on its own staggered cadence so the rotation feels organic
+    slots.forEach((slot, k) => setInterval(() => advance(slot), 4200 + k * 1700));
 }
 
 // ---------- Collage ----------

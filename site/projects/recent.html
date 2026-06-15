@@ -3,56 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="recent — selected editorial and movement work by Flavio Leone">
+    <meta name="description" content="recent — a rolling selection of recent commissioned and personal work by Flavio Leone.">
     <title>recent — Flavio Leone</title>
-    <link rel="preconnect" href="https://freight.cargo.site">
+    <link rel="preload" href="/assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body>
-    <nav class="site-nav" role="navigation">
-        <a href="/index.html" class="nav-logo" aria-label="Home">Flavio Leone</a>
+    <nav class="site-nav">
+        <a class="brand" href="/index.html">flavio leone</a>
+        <button class="nav-toggle" aria-label="Menu">Menu</button>
         <div class="nav-links">
-            <a href="/work.html" aria-current="page">Work</a>
-            <a href="/about.html">About</a>
-            <a href="/contact.html">Contact</a>
+            <a href="/work.html">work</a>
+            <a href="/projects/recent.html" aria-current="page">recent</a>
+            <a href="/projects/jepp.html">jepp</a>
+            <a href="/about.html">about</a>
+            <a href="/contact.html">contact</a>
         </div>
     </nav>
 
-    <main>
-        <header class="page-header">
-            <h1>recent</h1>
-        </header>
-        <div class="project-intro">
-            <p class="meta">Selected · ongoing</p>
-            <p class="desc">A rolling selection of recent commissioned and personal work.</p>
-        </div>
+    <header class="wrap section" style="padding-bottom:0">
+        <h1 class="serif lower" style="font-size:clamp(2.6rem,9vw,6rem);line-height:.95;letter-spacing:-.02em">recent</h1>
+    </header>
 
-        <section class="full-gallery" aria-label="recent">
-            <div class="gallery-grid" data-project="recent">
-                <!-- Populated by app.js -->
-            </div>
-        </section>
-
-        <nav class="next-project">
-            <span>Next project</span>
-            <a href="/projects/jepp.html">jepp &rsaquo;</a>
-        </nav>
-    </main>
-
-    <footer class="site-footer">
-        <p>&copy; 2026 Flavio Leone. All rights reserved.</p>
-    </footer>
-
-    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
-        <button class="lightbox-close" aria-label="Close viewer">&times;</button>
-        <button class="lightbox-prev" aria-label="Previous image">&lsaquo;</button>
-        <button class="lightbox-next" aria-label="Next image">&rsaquo;</button>
-        <div class="lightbox-content">
-            <img src="" alt="" id="lightbox-img">
-            <div class="lightbox-counter" id="lightbox-counter"></div>
+    <div class="marquee rule" aria-hidden="true" style="--mq:30s">
+        <div class="track">
+            <span>recent | selected | commissioned | personal | ongoing | </span>
+            <span>recent | selected | commissioned | personal | ongoing | </span>
         </div>
     </div>
 
-    <script src="/assets/app.js"></script>
+    <main class="wrap section">
+        <p class="hero-sub" style="max-width:48ch;margin-bottom:clamp(1.6rem,3vw,2.4rem)">A rolling selection of recent commissioned and personal work.</p>
+        <div class="masonry" data-project="recent" data-fill></div>
+        <div class="next">
+            <a href="/work.html">all work</a>
+            <a href="/projects/jepp.html">next — jepp</a>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="col"><span>studio</span><span>Flavio Leone</span><span>Zürich, Switzerland</span></div>
+            <div class="col"><span>contact</span><a href="mailto:hello@flavioleone.ch">hello@flavioleone.ch</a><a href="https://www.instagram.com/flavio.leone/" rel="noopener">Instagram</a></div>
+            <div class="col"><span>© 2026</span><span>All rights reserved</span></div>
+        </div>
+    </footer>
+
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+        <button class="lb-btn lb-close" aria-label="Close">Close</button>
+        <button class="lb-btn lb-prev" aria-label="Previous">&lsaquo;</button>
+        <button class="lb-btn lb-next" aria-label="Next">&rsaquo;</button>
+        <figure><img src="" alt=""><figcaption></figcaption></figure>
+    </div>
+
+    <script src="/assets/app.js" defer></script>
 </body>
 </html>

@@ -1,192 +1,193 @@
-// ========================================
-// Flavio Leone — projects + gallery + lightbox
-// Content lives in assets/work.json (grouped by project).
-// ========================================
+// ============================================================
+// Flavio Leone — "Editorial Index"
+// Content: assets/work.json  { projects:[{slug,title,meta,images:[{src,alt,w,h}]}], all:[...] }
+// ============================================================
 
 let projects = [];
-let allWork = [];       // full portfolio for the "All Work" page
-let currentList = [];   // image set the lightbox is currently navigating
+let allWork = [];
+let currentList = [];
 let currentIndex = 0;
 
-const THEMES = ['theme-a', 'theme-b', 'theme-c', 'theme-d', 'theme-e', 'theme-f'];
-const MANIFEST_PATH = '/assets/work.json';
+const MANIFEST = '/assets/work.json';
 
 document.addEventListener('DOMContentLoaded', () => {
-    applyBackgroundTheme();
+    initNav();
     initLightbox();
     loadManifest();
 });
 
-// ---------- Background theme (random per session) ----------
-function applyBackgroundTheme() {
-    let theme = sessionStorage.getItem('bgTheme');
-    if (!theme) {
-        theme = THEMES[Math.floor(Math.random() * THEMES.length)];
-        sessionStorage.setItem('bgTheme', theme);
-    }
-    document.body.classList.add(theme);
+function initNav() {
+    const t = document.querySelector('.nav-toggle');
+    const links = document.querySelector('.nav-links');
+    if (t && links) t.addEventListener('click', () => links.classList.toggle('open'));
 }
 
-// ---------- Manifest ----------
 async function loadManifest() {
     try {
-        const response = await fetch(MANIFEST_PATH);
-        if (!response.ok) throw new Error('Failed to load manifest');
-        const data = await response.json();
+        const res = await fetch(MANIFEST);
+        if (!res.ok) throw new Error('manifest');
+        const data = await res.json();
         projects = data.projects || [];
-        allWork = (data.all && data.all.length) ? data.all : allImages();
+        allWork = (data.all && data.all.length) ? data.all : projects.flatMap(p => p.images || []);
         render();
-    } catch (error) {
-        console.error('Error loading manifest:', error);
-        showError('Failed to load images. Please refresh the page.');
+    } catch (e) {
+        console.error(e);
+        document.querySelectorAll('[data-fill]').forEach(el => {
+            el.innerHTML = '<p style="color:var(--muted)">Could not load images — please refresh.</p>';
+        });
     }
 }
 
-function allImages() {
-    return projects.flatMap(p => p.images || []);
-}
-
-function showError(message) {
-    document.querySelectorAll('.gallery-grid, .projects-grid').forEach(el => {
-        el.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: var(--text-muted);">${message}</p>`;
-    });
-}
-
-// ---------- Rendering ----------
 function render() {
-    // Home: project cards
-    const projectsGrid = document.getElementById('projects-grid');
-    if (projectsGrid) renderProjectCards(projectsGrid, projects);
+    const stage = document.getElementById('hero-stage');
+    if (stage) heroSlideshow(stage, projects.find(p => p.slug === 'recent')?.images || allWork);
 
-    // Work: the full portfolio
-    const workGallery = document.getElementById('work-gallery');
-    if (workGallery) renderGallery(workGallery, allWork);
+    const cards = document.getElementById('cards');
+    if (cards) renderCards(cards, projects);
 
-    // Project pages: a grid tagged with data-project="<slug>"
+    const work = document.getElementById('work-gallery');
+    if (work) renderMasonry(work, allWork);
+
+    const idx = document.getElementById('work-index');
+    if (idx) renderIndex(idx, allWork);
+
     document.querySelectorAll('[data-project]').forEach(el => {
-        const proj = projects.find(p => p.slug === el.getAttribute('data-project'));
-        if (proj) renderGallery(el, proj.images || []);
+        const p = projects.find(x => x.slug === el.getAttribute('data-project'));
+        if (p) renderMasonry(el, p.images || []);
     });
+
+    initViewToggle();
 }
 
-function renderProjectCards(container, items) {
+const ar = (im) => (im.w && im.h) ? `${im.w} / ${im.h}` : '1';
+
+// ---------- Hero crossfade slideshow ----------
+function heroSlideshow(stage, images) {
+    const set = images.slice(0, 6);
+    if (!set.length) return;
+    stage.innerHTML = '';
+    set.forEach((im, i) => {
+        const img = document.createElement('img');
+        img.src = im.src; img.alt = im.alt || '';
+        img.loading = i === 0 ? 'eager' : 'lazy';
+        if (i === 0) img.classList.add('on');
+        stage.appendChild(img);
+    });
+    const meta = document.createElement('span');
+    meta.className = 'stage-meta';
+    stage.appendChild(meta);
+
+    const imgs = [...stage.querySelectorAll('img')];
+    let cur = 0;
+    const show = (n) => { imgs[cur].classList.remove('on'); cur = n; imgs[cur].classList.add('on'); meta.textContent = set[cur].alt; };
+    show(0);
+    stage.addEventListener('click', () => openLightbox(set, cur));
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches && imgs.length > 1) {
+        setInterval(() => show((cur + 1) % imgs.length), 4200);
+    }
+}
+
+// ---------- Project cards ----------
+function renderCards(container, items) {
     container.innerHTML = '';
     items.forEach(p => {
-        const cover = (p.images && p.images[0]) || { src: '', alt: '' };
+        const cover = (p.images && p.images[0]) || {};
         const a = document.createElement('a');
-        a.className = 'project-card';
+        a.className = 'card';
         a.href = `/projects/${p.slug}.html`;
-        a.setAttribute('aria-label', p.title);
         a.innerHTML =
-            `<div class="thumb"><img src="${cover.src}" alt="${cover.alt || p.title}" loading="lazy" decoding="async"></div>` +
-            `<div class="card-label"><span class="t">${p.title}</span><span class="m">${p.meta || ''}</span></div>`;
+            `<div class="frame"><img src="${cover.src}" alt="${cover.alt || p.title}" loading="lazy" style="--ar:${ar(cover)}"></div>` +
+            `<div class="cap"><span class="t">${p.title}</span><span class="n">${p.meta || ''} · ${(p.images || []).length}</span></div>`;
         container.appendChild(a);
     });
 }
 
-function renderGallery(container, images) {
+// ---------- Masonry ----------
+function renderMasonry(container, images) {
     container.innerHTML = '';
-    images.forEach((item, i) => {
-        const figure = document.createElement('figure');
-        figure.className = 'gallery-item';
-        figure.setAttribute('role', 'button');
-        figure.setAttribute('tabindex', '0');
-
-        const img = document.createElement('img');
-        img.src = item.src;
-        img.alt = item.alt || '';
-        img.loading = 'lazy';
-        img.decoding = 'async';
-
-        figure.appendChild(img);
-        container.appendChild(figure);
-
-        figure.addEventListener('click', () => openLightbox(images, i));
-        figure.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                openLightbox(images, i);
-            }
-        });
+    images.forEach((im, i) => {
+        const fig = document.createElement('figure');
+        fig.className = 'tile';
+        fig.innerHTML =
+            `<img src="${im.src}" alt="${im.alt || ''}" loading="lazy" decoding="async" style="--ar:${ar(im)}">` +
+            `<span class="idx">${String(i + 1).padStart(2, '0')}</span>`;
+        fig.addEventListener('click', () => openLightbox(images, i));
+        container.appendChild(fig);
     });
 }
 
+// ---------- Index list + cursor preview ----------
+function renderIndex(container, images) {
+    container.innerHTML = '';
+    const list = document.createElement('div');
+    list.className = 'index-list';
+
+    let preview = document.querySelector('.index-preview');
+    if (!preview) { preview = document.createElement('img'); preview.className = 'index-preview'; preview.alt = ''; document.body.appendChild(preview); }
+
+    images.forEach((im, i) => {
+        const row = document.createElement('div');
+        row.className = 'index-row';
+        const title = (im.alt || 'Untitled').replace(' — Flavio Leone', '');
+        row.innerHTML =
+            `<span class="num">${String(i + 1).padStart(2, '0')}</span>` +
+            `<span class="ti">${title.toLowerCase()}</span>` +
+            `<span class="dim">${im.w && im.h ? im.w + '×' + im.h : ''}</span>`;
+        row.addEventListener('mouseenter', () => { preview.src = im.src; preview.classList.add('on'); });
+        row.addEventListener('mousemove', (e) => { preview.style.left = e.clientX + 'px'; preview.style.top = e.clientY + 'px'; });
+        row.addEventListener('mouseleave', () => preview.classList.remove('on'));
+        row.addEventListener('click', () => openLightbox(images, i));
+        list.appendChild(row);
+    });
+    container.appendChild(list);
+}
+
+// ---------- View toggle ----------
+function initViewToggle() {
+    const root = document.querySelector('[data-view]');
+    const btns = document.querySelectorAll('.view-toggle button');
+    if (!root || !btns.length) return;
+    btns.forEach(b => b.addEventListener('click', () => {
+        root.setAttribute('data-view', b.dataset.set);
+        btns.forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+    }));
+}
+
 // ---------- Lightbox ----------
-let lightbox, lightboxImg, lightboxCounter;
-let touchStartX = 0;
-let touchEndX = 0;
-
+let lb, lbImg, lbCap;
 function initLightbox() {
-    lightbox = document.getElementById('lightbox');
-    lightboxImg = document.getElementById('lightbox-img');
-    lightboxCounter = document.getElementById('lightbox-counter');
-    if (!lightbox) return;
-
-    lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
-    lightbox.querySelector('.lightbox-prev').addEventListener('click', showPrevImage);
-    lightbox.querySelector('.lightbox-next').addEventListener('click', showNextImage);
-
-    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
-    document.addEventListener('keydown', handleLightboxKeyboard);
-    lightbox.addEventListener('touchstart', handleTouchStart, { passive: true });
-    lightbox.addEventListener('touchend', handleTouchEnd, { passive: true });
+    lb = document.getElementById('lightbox');
+    if (!lb) return;
+    lbImg = lb.querySelector('img');
+    lbCap = lb.querySelector('figcaption');
+    lb.querySelector('.lb-close').addEventListener('click', closeLightbox);
+    lb.querySelector('.lb-prev').addEventListener('click', (e) => { e.stopPropagation(); step(-1); });
+    lb.querySelector('.lb-next').addEventListener('click', (e) => { e.stopPropagation(); step(1); });
+    lb.addEventListener('click', (e) => { if (e.target === lb || e.target.tagName === 'FIGURE') closeLightbox(); });
+    document.addEventListener('keydown', (e) => {
+        if (!lb.classList.contains('on')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') step(-1);
+        if (e.key === 'ArrowRight') step(1);
+    });
+    let x0 = 0;
+    lb.addEventListener('touchstart', (e) => x0 = e.changedTouches[0].screenX, { passive: true });
+    lb.addEventListener('touchend', (e) => {
+        const d = x0 - e.changedTouches[0].screenX;
+        if (Math.abs(d) > 50) step(d > 0 ? 1 : -1);
+    }, { passive: true });
 }
-
-function openLightbox(list, index) {
+function openLightbox(list, i) {
     if (!list || !list.length) return;
-    currentList = list;
-    currentIndex = index;
-    updateLightboxImage();
-    lightbox.classList.add('active');
-    document.body.style.overflow = 'hidden';
-    lightbox.querySelector('.lightbox-close').focus();
+    currentList = list; currentIndex = i; paint();
+    lb.classList.add('on'); document.body.style.overflow = 'hidden';
+    lb.querySelector('.lb-close').focus();
 }
-
-function closeLightbox() {
-    lightbox.classList.remove('active');
-    document.body.style.overflow = '';
-}
-
-function updateLightboxImage() {
-    const item = currentList[currentIndex];
-    lightboxImg.src = item.src;
-    lightboxImg.alt = item.alt || '';
-    lightboxCounter.textContent = `${currentIndex + 1} / ${currentList.length}`;
-    preloadImage(currentIndex - 1);
-    preloadImage(currentIndex + 1);
-}
-
-function showPrevImage() {
-    currentIndex = (currentIndex - 1 + currentList.length) % currentList.length;
-    updateLightboxImage();
-}
-
-function showNextImage() {
-    currentIndex = (currentIndex + 1) % currentList.length;
-    updateLightboxImage();
-}
-
-function preloadImage(index) {
-    if (index < 0 || index >= currentList.length) return;
-    const img = new Image();
-    img.src = currentList[index].src;
-}
-
-function handleLightboxKeyboard(e) {
-    if (!lightbox.classList.contains('active')) return;
-    switch (e.key) {
-        case 'Escape': closeLightbox(); break;
-        case 'ArrowLeft': showPrevImage(); break;
-        case 'ArrowRight': showNextImage(); break;
-    }
-}
-
-function handleTouchStart(e) { touchStartX = e.changedTouches[0].screenX; }
-function handleTouchEnd(e) { touchEndX = e.changedTouches[0].screenX; handleSwipe(); }
-function handleSwipe() {
-    const swipeThreshold = 50;
-    const diff = touchStartX - touchEndX;
-    if (Math.abs(diff) > swipeThreshold) {
-        if (diff > 0) showNextImage(); else showPrevImage();
-    }
+function closeLightbox() { lb.classList.remove('on'); document.body.style.overflow = ''; }
+function step(d) { currentIndex = (currentIndex + d + currentList.length) % currentList.length; paint(); }
+function paint() {
+    const im = currentList[currentIndex];
+    lbImg.src = im.src; lbImg.alt = im.alt || '';
+    lbCap.textContent = `${(im.alt || '').replace(' — Flavio Leone', '')}  ·  ${currentIndex + 1} / ${currentList.length}`;
+    [-1, 1].forEach(o => { const n = currentList[currentIndex + o]; if (n) { const p = new Image(); p.src = n.src; } });
 }

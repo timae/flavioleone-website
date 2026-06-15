@@ -3,284 +3,416 @@
     {
       "slug": "recent",
       "title": "recent",
-      "meta": "Selected · ongoing",
+      "meta": "selected · ongoing",
       "description": "A rolling selection of recent commissioned and personal work.",
       "images": [
         {
-          "src": "https://freight.cargo.site/w/1200/i/H2770966477490783321405190863047/volley_favs28.jpg",
-          "alt": "Volley — Flavio Leone"
+          "src": "/assets/img/original/H2770966_volley_favs28.jpg",
+          "alt": "Volley — Flavio Leone",
+          "w": 4500,
+          "h": 2813
         },
         {
-          "src": "https://freight.cargo.site/w/1200/i/J2665380196107888810640231659719/P_ALBUM-COVR_low-res.jpg",
-          "alt": "Album Covr — Flavio Leone"
+          "src": "/assets/img/original/J2665380_P_ALBUM-COVR_low-res.jpg",
+          "alt": "Album Covr — Flavio Leone",
+          "w": 1152,
+          "h": 1152
         },
         {
-          "src": "https://freight.cargo.site/w/1200/i/W2665473471368321248187015002311/2507_ZeitCampus_Nina-Christ_255-1.jpg",
-          "alt": "Zeitcampus Nina Christ — Flavio Leone"
+          "src": "/assets/img/original/W2665473_2507_ZeitCampus_Nina-Christ_255-1.jpg",
+          "alt": "Zeitcampus Nina Christ — Flavio Leone",
+          "w": 1782,
+          "h": 2376
         },
         {
-          "src": "https://freight.cargo.site/w/1200/i/Y2770965769338725075769213876423/volley_favs2.jpg",
-          "alt": "Volley — Flavio Leone"
+          "src": "/assets/img/original/Y2770965_volley_favs2.jpg",
+          "alt": "Volley — Flavio Leone",
+          "w": 4500,
+          "h": 2813
         },
         {
-          "src": "https://freight.cargo.site/w/1200/i/P2557173765446481412052427765959/buz_600mm_headspin3-copy.jpg",
-          "alt": "Buz — Flavio Leone"
+          "src": "/assets/img/original/P2557173_buz_600mm_headspin3-copy.jpg",
+          "alt": "Buz — Flavio Leone",
+          "w": 1875,
+          "h": 2500
         },
         {
-          "src": "https://freight.cargo.site/w/1200/i/F2770966152994108320780468385991/volley_favs10.jpg",
-          "alt": "Volley — Flavio Leone"
+          "src": "/assets/img/original/F2770966_volley_favs10.jpg",
+          "alt": "Volley — Flavio Leone",
+          "w": 4500,
+          "h": 2813
         },
         {
-          "src": "https://freight.cargo.site/w/1200/i/G2665380724311958617239532632263/600mm_random.jpg",
-          "alt": "Photograph by Flavio Leone"
+          "src": "/assets/img/original/G2665380_600mm_random.jpg",
+          "alt": "Photograph by Flavio Leone",
+          "w": 2657,
+          "h": 3544
         },
         {
-          "src": "https://freight.cargo.site/w/1200/i/W2263782238116505621724387375303/2502_Atef-Abu-Saif_010_0180.jpg",
-          "alt": "Atef Abu Saif — Flavio Leone"
+          "src": "/assets/img/original/W2263782_2502_Atef-Abu-Saif_010_0180.jpg",
+          "alt": "Atef Abu Saif — Flavio Leone",
+          "w": 2889,
+          "h": 2167
         },
         {
-          "src": "https://freight.cargo.site/w/1200/i/Z2665506802495040128796477126855/2508_Coucou-Magazin_010_208.jpg",
-          "alt": "Coucou Magazin — Flavio Leone"
+          "src": "/assets/img/original/Z2665506_2508_Coucou-Magazin_010_208.jpg",
+          "alt": "Coucou Magazin — Flavio Leone",
+          "w": 2293,
+          "h": 3057
         },
         {
-          "src": "https://freight.cargo.site/w/1200/i/W2665466582542427385797221316807/060_0327-2-1.jpg",
-          "alt": "Photograph by Flavio Leone"
+          "src": "/assets/img/original/W2665466_060_0327-2-1.jpg",
+          "alt": "Photograph by Flavio Leone",
+          "w": 2304,
+          "h": 3456
         },
         {
-          "src": "https://freight.cargo.site/w/1200/i/J2665472816103078261876322498759/2507_ZeitCampus_Erich-Seifritz_639.jpg",
-          "alt": "Zeitcampus Erich Seifritz — Flavio Leone"
+          "src": "/assets/img/original/J2665472_2507_ZeitCampus_Erich-Seifritz_639.jpg",
+          "alt": "Zeitcampus Erich Seifritz — Flavio Leone",
+          "w": 1906,
+          "h": 2541
         },
         {
-          "src": "https://freight.cargo.site/w/1200/i/M2665510821524064956043906808007/DSCF4409.jpg",
-          "alt": "Photograph by Flavio Leone"
+          "src": "/assets/img/original/M2665510_DSCF4409.jpg",
+          "alt": "Photograph by Flavio Leone",
+          "w": 2504,
+          "h": 1878
         },
         {
-          "src": "https://freight.cargo.site/w/1200/i/W2208193715726962203624122644679/2501_ALELEFI-ALELEFI_030_0781-1.jpg",
-          "alt": "Alelefi Alelefi — Flavio Leone"
+          "src": "/assets/img/original/W2208193_2501_ALELEFI-ALELEFI_030_0781-1.jpg",
+          "alt": "Alelefi Alelefi — Flavio Leone",
+          "w": 3724,
+          "h": 4965
         },
         {
-          "src": "https://freight.cargo.site/w/1200/i/R2208203979126429934144450754759/2502_Dominic-Limburg_080_521.jpg",
-          "alt": "Dominic Limburg — Flavio Leone"
+          "src": "/assets/img/original/R2208203_2502_Dominic-Limburg_080_521.jpg",
+          "alt": "Dominic Limburg — Flavio Leone",
+          "w": 3840,
+          "h": 5120
         },
         {
-          "src": "https://freight.cargo.site/w/1200/i/P2665379891939525779243435063495/2509_lucca-fries_010_0352-1.jpg",
-          "alt": "Lucca Fries — Flavio Leone"
+          "src": "/assets/img/original/P2665379_2509_lucca-fries_010_0352-1.jpg",
+          "alt": "Lucca Fries — Flavio Leone",
+          "w": 1103,
+          "h": 1471
         },
         {
-          "src": "https://freight.cargo.site/w/1200/i/Z2234098946460465081819385329863/CAK_7707.jpg",
-          "alt": "Cak — Flavio Leone"
+          "src": "/assets/img/original/Z2234098_CAK_7707.jpg",
+          "alt": "Cak — Flavio Leone",
+          "w": 1731,
+          "h": 1298
         },
         {
-          "src": "https://freight.cargo.site/w/1200/i/H2447382582140591582410889787591/IMG_8227-1-copy.jpg",
-          "alt": "Photograph by Flavio Leone"
+          "src": "/assets/img/original/H2447382_IMG_8227-1-copy.jpg",
+          "alt": "Photograph by Flavio Leone",
+          "w": 886,
+          "h": 1329
         },
         {
-          "src": "https://freight.cargo.site/w/1200/i/C2234098946312891129229708916935/2405_Andryy_030_351.jpg",
-          "alt": "Andryy — Flavio Leone"
+          "src": "/assets/img/original/C2234098_2405_Andryy_030_351.jpg",
+          "alt": "Andryy — Flavio Leone",
+          "w": 2136,
+          "h": 1602
         },
         {
-          "src": "https://freight.cargo.site/w/1200/i/D2557296958817044212467433240775/IMG_0361.jpg",
-          "alt": "Photograph by Flavio Leone"
+          "src": "/assets/img/original/D2557296_IMG_0361.jpg",
+          "alt": "Photograph by Flavio Leone",
+          "w": 1097,
+          "h": 1463
         }
       ]
     },
     {
       "slug": "jepp",
       "title": "jepp",
-      "meta": "Commissioned · EP campaign · 2019",
+      "meta": "commissioned · ep campaign · 2019",
       "description": "A commissioned portrait series shot for an EP campaign in 2019.",
       "images": [
         {
-          "src": "https://freight.cargo.site/w/1200/i/T2211865894515236406609653823687/0619_JEPP__020_097.jpg",
-          "alt": "Jepp — Flavio Leone"
+          "src": "/assets/img/original/T2211865_0619_JEPP__020_097.jpg",
+          "alt": "Jepp — Flavio Leone",
+          "w": 1776,
+          "h": 2368
         },
         {
-          "src": "https://freight.cargo.site/w/1200/i/H2211865895013298496599811717319/0619_JEPP__030_261.jpg",
-          "alt": "Jepp — Flavio Leone"
+          "src": "/assets/img/original/H2211865_0619_JEPP__030_261.jpg",
+          "alt": "Jepp — Flavio Leone",
+          "w": 1744,
+          "h": 2326
         },
         {
-          "src": "https://freight.cargo.site/w/1200/i/H2211865895031745240673521268935/0619_JEPP__040_041.jpg",
-          "alt": "Jepp — Flavio Leone"
+          "src": "/assets/img/original/H2211865_0619_JEPP__040_041.jpg",
+          "alt": "Jepp — Flavio Leone",
+          "w": 1812,
+          "h": 2416
         },
         {
-          "src": "https://freight.cargo.site/w/1200/i/V2211865895179319193263197681863/0619_JEPP__140_062.jpg",
-          "alt": "Jepp — Flavio Leone"
+          "src": "/assets/img/original/V2211865_0619_JEPP__140_062.jpg",
+          "alt": "Jepp — Flavio Leone",
+          "w": 1210,
+          "h": 1614
         },
         {
-          "src": "https://freight.cargo.site/w/1200/i/U2211865895123978961042069027015/0619_JEPP__080_198.jpg",
-          "alt": "Jepp — Flavio Leone"
+          "src": "/assets/img/original/U2211865_0619_JEPP__080_198.jpg",
+          "alt": "Jepp — Flavio Leone",
+          "w": 1888,
+          "h": 2517
         },
         {
-          "src": "https://freight.cargo.site/w/1200/i/C2211865895087085472894649923783/0619_JEPP__060_266.jpg",
-          "alt": "Jepp — Flavio Leone"
+          "src": "/assets/img/original/C2211865_0619_JEPP__060_266.jpg",
+          "alt": "Jepp — Flavio Leone",
+          "w": 1438,
+          "h": 1918
         },
         {
-          "src": "https://freight.cargo.site/w/1200/i/P2211865895160872449189488130247/0619_JEPP__120_092.jpg",
-          "alt": "Jepp — Flavio Leone"
+          "src": "/assets/img/original/P2211865_0619_JEPP__120_092.jpg",
+          "alt": "Jepp — Flavio Leone",
+          "w": 1271,
+          "h": 1694
         }
       ]
     }
   ],
   "all": [
     {
-      "src": "https://freight.cargo.site/w/1200/i/U1730226301834025729001469016263/DSCF9659.jpg",
-      "alt": "Photograph by Flavio Leone"
+      "src": "/assets/img/original/U1730226_DSCF9659.jpg",
+      "alt": "Photograph by Flavio Leone",
+      "w": 2071,
+      "h": 2762
     },
     {
-      "src": "https://freight.cargo.site/w/1200/i/E2665344400901990052056283773127/IMG_0239.jpg",
-      "alt": "Photograph by Flavio Leone"
+      "src": "/assets/img/original/E2665344_IMG_0239.jpg",
+      "alt": "Photograph by Flavio Leone",
+      "w": 2304,
+      "h": 3072
     },
     {
-      "src": "https://freight.cargo.site/w/1200/i/L2665334953346672469488294983879/2506_Dino_i-love-you-i-leave-you_040_0570-1.jpg",
-      "alt": "Dino Love You Leave You — Flavio Leone"
+      "src": "/assets/img/original/L2665334_2506_Dino_i-love-you-i-leave-you_040_0570-1.jpg",
+      "alt": "Dino Love You Leave You — Flavio Leone",
+      "w": 3302,
+      "h": 4954
     },
     {
-      "src": "https://freight.cargo.site/w/1200/i/P2665343752240681444133610748103/IMG_5847-1.jpg",
-      "alt": "Photograph by Flavio Leone"
+      "src": "/assets/img/original/P2665343_IMG_5847-1.jpg",
+      "alt": "Photograph by Flavio Leone",
+      "w": 1152,
+      "h": 1536
     },
     {
-      "src": "https://freight.cargo.site/w/1200/i/E2665348223897465607992308431047/zezzanerra_postkarten_pond-1-1.jpg",
-      "alt": "Zezzanerra Postkarten Pond — Flavio Leone"
+      "src": "/assets/img/original/E2665348_zezzanerra_postkarten_pond-1-1.jpg",
+      "alt": "Zezzanerra Postkarten Pond — Flavio Leone",
+      "w": 744,
+      "h": 1049
     },
     {
-      "src": "https://freight.cargo.site/w/1200/i/U2590846070968898264732937779399/2506_Lukas-Britschgi_070_0784.jpg",
-      "alt": "Lukas Britschgi — Flavio Leone"
+      "src": "/assets/img/original/U2590846_2506_Lukas-Britschgi_070_0784.jpg",
+      "alt": "Lukas Britschgi — Flavio Leone",
+      "w": 2752,
+      "h": 3669
     },
     {
-      "src": "https://freight.cargo.site/w/1200/i/C2367803884283708678713899251911/flagfootball_6.jpg",
-      "alt": "Flagfootball — Flavio Leone"
+      "src": "/assets/img/original/C2367803_flagfootball_6.jpg",
+      "alt": "Flagfootball — Flavio Leone",
+      "w": 1080,
+      "h": 1440
     },
     {
-      "src": "https://freight.cargo.site/w/1200/i/U2310252415301723917825960343751/2504_CYPHER25_Nemo_017.jpg",
-      "alt": "Nemo — Flavio Leone"
+      "src": "/assets/img/original/U2310252_2504_CYPHER25_Nemo_017.jpg",
+      "alt": "Nemo — Flavio Leone",
+      "w": 1035,
+      "h": 1381
     },
     {
-      "src": "https://freight.cargo.site/w/1200/i/M2234098946442018337745675778247/2405_Andryy_070_1060.jpg",
-      "alt": "Andryy — Flavio Leone"
+      "src": "/assets/img/original/M2234098_2405_Andryy_070_1060.jpg",
+      "alt": "Andryy — Flavio Leone",
+      "w": 1318,
+      "h": 1758
     },
     {
-      "src": "https://freight.cargo.site/w/1200/i/F2263803963308169831306064328903/2502_Atef-Abu-Saif_010_0003-2.jpg",
-      "alt": "Atef Abu Saif — Flavio Leone"
+      "src": "/assets/img/original/F2263803_2502_Atef-Abu-Saif_010_0003-2.jpg",
+      "alt": "Atef Abu Saif — Flavio Leone",
+      "w": 1257,
+      "h": 1676
     },
     {
-      "src": "https://freight.cargo.site/w/1200/i/L2208203979107983190070741203143/2502_Dominic-Limburg_050_413.jpg",
-      "alt": "Dominic Limburg — Flavio Leone"
+      "src": "/assets/img/original/L2208203_2502_Dominic-Limburg_050_413.jpg",
+      "alt": "Dominic Limburg — Flavio Leone",
+      "w": 3301,
+      "h": 4402
     },
     {
-      "src": "https://freight.cargo.site/w/1200/i/F2208193169887805062558490327239/2501_ALELEFI-ALELEFI_010_0542.jpg",
-      "alt": "Alelefi Alelefi — Flavio Leone"
+      "src": "/assets/img/original/F2208193_2501_ALELEFI-ALELEFI_010_0542.jpg",
+      "alt": "Alelefi Alelefi — Flavio Leone",
+      "w": 3385,
+      "h": 4514
     },
     {
-      "src": "https://freight.cargo.site/w/1200/i/E2208286776488654552076239796423/1911_SerpentineTrick7376.jpg",
-      "alt": "Photograph by Flavio Leone"
+      "src": "/assets/img/original/E2208286_1911_SerpentineTrick7376.jpg",
+      "alt": "Photograph by Flavio Leone",
+      "w": 4418,
+      "h": 3314
     },
     {
-      "src": "https://freight.cargo.site/w/1200/i/A1978801866649731946841500842183/2407_Softloft_030_615-1.jpg",
-      "alt": "Softloft — Flavio Leone"
+      "src": "/assets/img/original/A1978801_2407_Softloft_030_615-1.jpg",
+      "alt": "Softloft — Flavio Leone",
+      "w": 2601,
+      "h": 1951
     },
     {
-      "src": "https://freight.cargo.site/w/1200/i/V1733438088056531713381556844743/2403_Cypher-_Cachita_6993_high-res.jpg",
-      "alt": "Cypher Cachita — Flavio Leone"
+      "src": "/assets/img/original/V1733438_2403_Cypher-_Cachita_6993_high-res.jpg",
+      "alt": "Cypher Cachita — Flavio Leone",
+      "w": 5355,
+      "h": 3012
     },
     {
-      "src": "https://freight.cargo.site/w/1200/i/D1994373654336982427679328598215/2311_TEANDER_010_0579-1-2.jpg",
-      "alt": "Teander — Flavio Leone"
+      "src": "/assets/img/original/D1994373_2311_TEANDER_010_0579-1-2.jpg",
+      "alt": "Teander — Flavio Leone",
+      "w": 1898,
+      "h": 2531
     },
     {
-      "src": "https://freight.cargo.site/w/1200/i/B2208358703442850950001195251911/2310_Swiss_Ski_Wendy-Holdener_1126-1.jpg",
-      "alt": "Swiss Ski Wendy Holdener — Flavio Leone"
+      "src": "/assets/img/original/B2208358_2310_Swiss_Ski_Wendy-Holdener_1126-1.jpg",
+      "alt": "Swiss Ski Wendy Holdener — Flavio Leone",
+      "w": 2196,
+      "h": 2928
     },
     {
-      "src": "https://freight.cargo.site/w/1200/i/K2265512092868318596184842467527/2310_Swiss_Ski_Jasmine-Flury_1983-copy.jpg",
-      "alt": "Swiss Ski Jasmine Flury — Flavio Leone"
+      "src": "/assets/img/original/K2265512_2310_Swiss_Ski_Jasmine-Flury_1983-copy.jpg",
+      "alt": "Swiss Ski Jasmine Flury — Flavio Leone",
+      "w": 6905,
+      "h": 4616
     },
     {
-      "src": "https://freight.cargo.site/w/1200/i/X1875526512752120166592253556935/2310_Laurin-Buser---Bacchus_020_0853-1.jpg",
-      "alt": "Laurin Buser Bacchus — Flavio Leone"
+      "src": "/assets/img/original/X1875526_2310_Laurin-Buser---Bacchus_020_0853-1.jpg",
+      "alt": "Laurin Buser Bacchus — Flavio Leone",
+      "w": 3047,
+      "h": 3047
     },
     {
-      "src": "https://freight.cargo.site/w/1200/i/V1994346890306494019891370424519/2309_COLD_010_0568.jpg",
-      "alt": "Cold — Flavio Leone"
+      "src": "/assets/img/original/V1994346_2309_COLD_010_0568.jpg",
+      "alt": "Cold — Flavio Leone",
+      "w": 1544,
+      "h": 2315
     },
     {
-      "src": "https://freight.cargo.site/w/1200/i/L2208407727104072870883959797959/IMG_9812.jpg",
-      "alt": "Photograph by Flavio Leone"
+      "src": "/assets/img/original/L2208407_IMG_9812.jpg",
+      "alt": "Photograph by Flavio Leone",
+      "w": 2370,
+      "h": 1778
     },
     {
-      "src": "https://freight.cargo.site/w/1200/i/Q2051905029520455369710916368583/2212_Marlen-Reusser020_032.jpg",
-      "alt": "Marlen — Flavio Leone"
+      "src": "/assets/img/original/Q2051905_2212_Marlen-Reusser020_032.jpg",
+      "alt": "Marlen — Flavio Leone",
+      "w": 2121,
+      "h": 2828
     },
     {
-      "src": "https://freight.cargo.site/w/1200/i/H2208444564071396448141125646535/DSCF1199-_low-res.jpg",
-      "alt": "Photograph by Flavio Leone"
+      "src": "/assets/img/original/H2208444_DSCF1199-_low-res.jpg",
+      "alt": "Photograph by Flavio Leone",
+      "w": 1500,
+      "h": 1500
     },
     {
-      "src": "https://freight.cargo.site/w/1200/i/Z1986732308626516453095591147719/call---response_all-copy.jpg",
-      "alt": "Call Response — Flavio Leone"
+      "src": "/assets/img/original/Z1986732_call---response_all-copy.jpg",
+      "alt": "Call Response — Flavio Leone",
+      "w": 5811,
+      "h": 3630
     },
     {
-      "src": "https://freight.cargo.site/w/1200/i/W1960827051145236584723648903367/020_0156.jpg",
-      "alt": "Photograph by Flavio Leone"
+      "src": "/assets/img/original/W1960827_020_0156.jpg",
+      "alt": "Photograph by Flavio Leone",
+      "w": 3233,
+      "h": 4850
     },
     {
-      "src": "https://freight.cargo.site/w/1200/i/F1951871584788126131180840188103/IMG_4723.jpg",
-      "alt": "Photograph by Flavio Leone"
+      "src": "/assets/img/original/F1951871_IMG_4723.jpg",
+      "alt": "Photograph by Flavio Leone",
+      "w": 2161,
+      "h": 2702
     },
     {
-      "src": "https://freight.cargo.site/w/1200/i/V2265400362064715525926987004103/Screenshot-2025-03-18-at-16.10.20.png",
-      "alt": "Photograph by Flavio Leone"
+      "src": "/assets/img/original/V2265400_Screenshot-2025-03-18-at-16.10.20.png",
+      "alt": "Photograph by Flavio Leone",
+      "w": 1850,
+      "h": 1040
     },
     {
-      "src": "https://freight.cargo.site/w/1200/i/F2208491490430050908616419211463/2105_SI_Sport_Fechter_521.jpg",
-      "alt": "Si Sport Fechter — Flavio Leone"
+      "src": "/assets/img/original/F2208491_2105_SI_Sport_Fechter_521.jpg",
+      "alt": "Si Sport Fechter — Flavio Leone",
+      "w": 1199,
+      "h": 1599
     },
     {
-      "src": "https://freight.cargo.site/w/1200/i/N2211222582393474978232406407367/DSCF2839.jpg",
-      "alt": "Photograph by Flavio Leone"
+      "src": "/assets/img/original/N2211222_DSCF2839.jpg",
+      "alt": "Photograph by Flavio Leone",
+      "w": 1784,
+      "h": 2379
     },
     {
-      "src": "https://freight.cargo.site/w/1200/i/C2243046043548236037412335417543/charlotte-gainsburg_1-3.jpg",
-      "alt": "Charlotte Gainsburg — Flavio Leone"
+      "src": "/assets/img/original/C2243046_charlotte-gainsburg_1-3.jpg",
+      "alt": "Charlotte Gainsburg — Flavio Leone",
+      "w": 2281,
+      "h": 3042
     },
     {
-      "src": "https://freight.cargo.site/w/1200/i/A1730226301612664800116954396871/A4541720.jpg",
-      "alt": "Photograph by Flavio Leone"
+      "src": "/assets/img/original/A1730226_A4541720.jpg",
+      "alt": "Photograph by Flavio Leone",
+      "w": 2044,
+      "h": 2734
     },
     {
-      "src": "https://freight.cargo.site/w/1200/i/T2052331976626583022152926394567/Anderson.-Paak.jpg",
-      "alt": "Anderson Paak — Flavio Leone"
+      "src": "/assets/img/original/T2052331_Anderson.-Paak.jpg",
+      "alt": "Anderson Paak — Flavio Leone",
+      "w": 1667,
+      "h": 2500
     },
     {
-      "src": "https://freight.cargo.site/w/1200/i/J1730226301446644103453568432327/1912_Nurit0325.jpg",
-      "alt": "Photograph by Flavio Leone"
+      "src": "/assets/img/original/J1730226_1912_Nurit0325.jpg",
+      "alt": "Photograph by Flavio Leone",
+      "w": 3126,
+      "h": 4168
     },
     {
-      "src": "https://freight.cargo.site/w/1200/i/F2211820177654250627048531065031/190701_SI_Sport_Okafor-_020_150.jpg",
-      "alt": "Si Sport Okafor — Flavio Leone"
+      "src": "/assets/img/original/F2211820_190701_SI_Sport_Okafor-_020_150.jpg",
+      "alt": "Si Sport Okafor — Flavio Leone",
+      "w": 1532,
+      "h": 1149
     },
     {
-      "src": "https://freight.cargo.site/w/1200/i/H2212874195243405825482263132359/9H6A3010.jpg",
-      "alt": "Photograph by Flavio Leone"
+      "src": "/assets/img/original/H2212874_9H6A3010.jpg",
+      "alt": "Photograph by Flavio Leone",
+      "w": 1251,
+      "h": 1668
     },
     {
-      "src": "https://freight.cargo.site/w/1200/i/T2211865894515236406609653823687/0619_JEPP__020_097.jpg",
-      "alt": "Jepp — Flavio Leone"
+      "src": "/assets/img/original/T2211865_0619_JEPP__020_097.jpg",
+      "alt": "Jepp — Flavio Leone",
+      "w": 1776,
+      "h": 2368
     },
     {
-      "src": "https://freight.cargo.site/w/1200/i/Y1965664137246971098911591397575/DSCF1093.jpg",
-      "alt": "Photograph by Flavio Leone"
+      "src": "/assets/img/original/Y1965664_DSCF1093.jpg",
+      "alt": "Photograph by Flavio Leone",
+      "w": 3049,
+      "h": 2287
     },
     {
-      "src": "https://freight.cargo.site/w/1200/i/Y1951794687469419536659459111111/minotaur0117_1.jpg",
-      "alt": "Photograph by Flavio Leone"
+      "src": "/assets/img/original/Y1951794_minotaur0117_1.jpg",
+      "alt": "Photograph by Flavio Leone",
+      "w": 2611,
+      "h": 3263
     },
     {
-      "src": "https://freight.cargo.site/w/1200/i/C1965641960829500102320572364999/diabolo_stalamuerte27036.jpg",
-      "alt": "Diabolo — Flavio Leone"
+      "src": "/assets/img/original/C1965641_diabolo_stalamuerte27036.jpg",
+      "alt": "Diabolo — Flavio Leone",
+      "w": 1866,
+      "h": 2488
     },
     {
-      "src": "https://freight.cargo.site/w/1200/i/N2213045123604096301504466811079/_O9I5030.jpg",
-      "alt": "Photograph by Flavio Leone"
+      "src": "/assets/img/original/N2213045__O9I5030.jpg",
+      "alt": "Photograph by Flavio Leone",
+      "w": 1788,
+      "h": 2384
     }
   ]
 }

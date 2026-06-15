@@ -3,64 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Get in touch with Flavio Leone">
+    <meta name="description" content="Contact Flavio Leone for commissions, prints and collaborations.">
     <title>Contact — Flavio Leone</title>
+    <link rel="preload" href="/assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body>
-    <nav class="site-nav" role="navigation">
-        <a href="/index.html" class="nav-logo" aria-label="Home">Flavio Leone</a>
+    <nav class="site-nav">
+        <a class="brand" href="/index.html">flavio leone</a>
+        <button class="nav-toggle" aria-label="Menu">Menu</button>
         <div class="nav-links">
-            <a href="/work.html">Work</a>
-            <a href="/about.html">About</a>
-            <a href="/contact.html" aria-current="page">Contact</a>
+            <a href="/work.html">work</a>
+            <a href="/projects/recent.html">recent</a>
+            <a href="/projects/jepp.html">jepp</a>
+            <a href="/about.html">about</a>
+            <a href="/contact.html" aria-current="page">contact</a>
         </div>
     </nav>
 
-    <main>
-        <article class="contact-content">
-            <header class="page-header">
-                <h1>Contact</h1>
-            </header>
+    <main class="wrap">
+        <article class="prose-wrap prose">
+            <h1>contact</h1>
+            <p>For inquiries, collaborations, or commissions — I'd love to hear from you.</p>
+            <p>
+                Email · <a class="link" href="mailto:hello@flavioleone.ch">hello@flavioleone.ch</a><br>
+                Instagram · <a class="link" href="https://www.instagram.com/flavio.leone/" rel="noopener">@flavio.leone</a>
+            </p>
 
-            <div class="prose">
-                <p>For inquiries, collaborations, or commissions:</p>
-
-                <div class="contact-info">
-                    <p><strong>Email:</strong> <a href="mailto:hello@flavioleone.ch">hello@flavioleone.ch</a></p>
-                    <p><strong>Instagram:</strong> <a href="https://www.instagram.com/flavio.leone/" target="_blank" rel="noopener noreferrer">@flavio.leone</a></p>
-                </div>
-
-                <div class="cta-container">
-                    <a href="mailto:hello@flavioleone.ch" class="btn-primary">Send Email</a>
-                </div>
-            </div>
-
-            <div class="form-placeholder">
-                <p class="form-note"><em>This form is a visual placeholder. Please use the email link above to contact directly.</em></p>
-                <form class="contact-form" onsubmit="return false;">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" disabled>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" disabled>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="6" disabled></textarea>
-                    </div>
-                    <button type="submit" class="btn-primary" disabled>Send Message</button>
-                </form>
-            </div>
+            <form class="form" onsubmit="return false;">
+                <p class="note"><em>This form is a visual placeholder — please use the email above to get in touch directly.</em></p>
+                <div class="fg"><label for="name">Name</label><input id="name" type="text" disabled></div>
+                <div class="fg"><label for="email">Email</label><input id="email" type="email" disabled></div>
+                <div class="fg"><label for="message">Message</label><textarea id="message" rows="5" disabled></textarea></div>
+                <button class="btn" type="submit" disabled>Send message</button>
+            </form>
         </article>
     </main>
 
     <footer class="site-footer">
-        <p>&copy; 2026 Flavio Leone. All rights reserved.</p>
+        <div class="wrap">
+            <div class="col"><span>studio</span><span>Flavio Leone</span><span>Zürich, Switzerland</span></div>
+            <div class="col"><span>contact</span><a href="mailto:hello@flavioleone.ch">hello@flavioleone.ch</a><a href="https://www.instagram.com/flavio.leone/" rel="noopener">Instagram</a></div>
+            <div class="col"><span>© 2026</span><span>All rights reserved</span></div>
+        </div>
     </footer>
 
-    <script src="/assets/app.js"></script>
+    <script src="/assets/app.js" defer></script>
 </body>
 </html>

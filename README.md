@@ -1,16 +1,28 @@
 # Flavio Leone — Photographer
 
-A static portfolio for Flavio Leone (photographer & visual artist, Switzerland),
-built in the same house style as **flavioleone.com**: system-font Swiss
-minimalism, a JSON-driven image gallery, a random per-session background theme,
-dark-mode support, and a keyboard/swipe lightbox. Served by nginx and packaged
-for [deplo.io](https://guides.deplo.io/docker/quick-start.html).
+A static portfolio for Flavio Leone (photographer & visual artist, Switzerland).
+Served by nginx and packaged for
+[deplo.io](https://guides.deplo.io/docker/quick-start.html).
 
-Best of both existing sites: the **flavioleone.com** design system + the
-**flavioleone.ch** idea of organising work into named projects (`recent`,
-`jepp`). The images are Flavio's **real photographs**, scraped from the live
-flavioleone.ch (a Cargo site) and served from his Cargo CDN — see
-[Images](#images) below.
+## Design — "Editorial Index"
+
+A new design that fuses both existing sites rather than copying either:
+
+- **From flavioleone.ch:** its *laufschrift* running-text **marquees**, the
+  lowercase editorial voice, work organised into **named projects**, and a
+  **serif/grotesque** type pairing — here the self-hosted **Fraunces** variable
+  serif (in `assets/fonts/`, nothing loaded from Google) set against a system
+  grotesque.
+- **From flavioleone.com:** the restraint, dark-mode support, the JSON-driven
+  galleries and the keyboard/swipe lightbox.
+- **New:** a warm **paper-and-ink** palette with a subtle film-grain overlay, a
+  cinematic auto-advancing **hero slideshow**, a **natural-ratio masonry** (no
+  forced crops — built from each photo's real dimensions), and a **grid ⇄ index**
+  toggle on the Work page with a cursor-following thumbnail preview.
+
+Everything is self-contained — **no external services, fonts or CDNs at runtime**.
+The photographs are Flavio's real images (extracted from the live flavioleone.ch)
+downloaded into `site/assets/img/original/`.
 
 ## Structure
 
@@ -26,10 +38,11 @@ flavioleone.ch (a Cargo site) and served from his Cargo CDN — see
     ├── about.html  contact.html  404.html
     ├── robots.txt  sitemap.xml
     └── assets/
-        ├── styles.css             # Design system (light/dark + 6 bg themes)
-        ├── app.js                 # Project cards + galleries + lightbox + bg theme
+        ├── styles.css             # Design system (paper/ink, light/dark, marquee, masonry)
+        ├── app.js                 # Hero slideshow + cards + masonry + index + lightbox
         ├── work.json              # Content manifest (the only thing you edit)
-        └── img/original/          # (empty) drop self-hosted photos here to localise
+        ├── fonts/                 # Self-hosted Fraunces variable serif (woff2)
+        └── img/original/          # Flavio's photographs (local, ~37 MB)
 ```
 
 The site is **data-driven** from `assets/work.json`:
@@ -53,20 +66,17 @@ grid). To add a project, add an object to `projects` and a matching
 
 ## Images
 
-The galleries use Flavio's real photos, hotlinked from his Cargo CDN
-(`freight.cargo.site`, sized at `w/1200`). The data was extracted from the live
-flavioleone.ch:
+Flavio's real photos, extracted from the live flavioleone.ch (a Cargo site,
+sized at `w/1200`) and **downloaded into the repo** at
+`site/assets/img/original/` — so the deployed site depends on nothing external:
 
 - **recent** (19) — the home slideshow reel
 - **jepp** (7) — the commissioned EP series
 - **all** (40) — the full `index` portfolio shown on `work.html`
 
-> **Trade-off:** hotlinking keeps the repo tiny but depends on his Cargo
-> subscription staying live. To make the site fully self-contained, download the
-> images into `site/assets/img/original/` and rewrite the `src` values to
-> `/assets/img/original/<file>` (a script can fetch every `src` in `work.json`).
-> napulé was intentionally omitted — it's a single-image stub on the live site
-> with no resolvable source file.
+`work.json` stores each image's `src` (local path), `alt`, and original `w`/`h`
+(used to lay out the masonry without reflow). napulé was intentionally omitted —
+it's a single-image stub on the live site with no resolvable source file.
 
 ## Run with Docker
 
@@ -107,21 +117,16 @@ nctl create app flavioleone \
 deplo.io injects `$PORT`; the Dockerfile defaults it to `8080`, so the same
 image runs locally unchanged.
 
-## Self-hosting the photos (optional)
+## Updating the photos
 
-To stop depending on his Cargo CDN, download every image referenced in
-`work.json` into `site/assets/img/original/` and rewrite the `src` values, e.g.:
+Images already live in `site/assets/img/original/`. To change the selection,
+edit `site/assets/work.json`: each entry is `{ "src": "/assets/img/original/<file>",
+"alt": "…", "w": <px>, "h": <px> }`. Order within a project = display order; the
+first image is the project's cover. Set `w`/`h` to the real pixel dimensions so
+the masonry reserves space without reflow.
 
-```powershell
-$ua = "Mozilla/5.0"
-$j = Get-Content site/assets/work.json -Raw | ConvertFrom-Json
-$all = @($j.projects.images; $j.all) | Sort-Object src -Unique
-foreach ($img in $all) {
-  $file = ($img.src -split '/')[-1]
-  Invoke-WebRequest -Uri $img.src -UserAgent $ua -OutFile "site/assets/img/original/$file"
-}
-# then replace  https://freight.cargo.site/w/1200/i/<hash>/  ->  /assets/img/original/
-```
+Bio text and contact details (`hello@flavioleone.ch`, `@flavio.leone`) mirror the
+live site — adjust to taste.
 
 Bio text and contact details (`hello@flavioleone.ch`, `@flavio.leone`) mirror the
 current flavioleone.com — adjust to taste.

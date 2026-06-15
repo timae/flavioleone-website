@@ -3,43 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="About Flavio Leone — Photographer based in Switzerland">
+    <meta name="description" content="About Flavio Leone — photographer and visual artist based in Zürich.">
     <title>About — Flavio Leone</title>
+    <link rel="preload" href="/assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body>
-    <nav class="site-nav" role="navigation">
-        <a href="/index.html" class="nav-logo" aria-label="Home">Flavio Leone</a>
+    <nav class="site-nav">
+        <a class="brand" href="/index.html">flavio leone</a>
+        <button class="nav-toggle" aria-label="Menu">Menu</button>
         <div class="nav-links">
-            <a href="/work.html">Work</a>
-            <a href="/about.html" aria-current="page">About</a>
-            <a href="/contact.html">Contact</a>
+            <a href="/work.html">work</a>
+            <a href="/projects/recent.html">recent</a>
+            <a href="/projects/jepp.html">jepp</a>
+            <a href="/about.html" aria-current="page">about</a>
+            <a href="/contact.html">contact</a>
         </div>
     </nav>
 
-    <main>
-        <article class="about-content">
-            <header class="page-header">
-                <h1>About</h1>
-            </header>
+    <main class="wrap">
+        <article class="prose-wrap prose">
+            <h1>about</h1>
+            <p>Flavio Leone is a photographer and visual artist based in Switzerland.</p>
+            <p>He began his photographic career at the age of sixteen when he became involved in the Swiss skateboarding scene. After completing an apprenticeship as a print technologist, he transitioned into the role of a photographer's assistant, gaining experience in both commercial and editorial photography. His artistic path has now led him to combine portraiture and various forms of physical movement with his interest in abstract photography.</p>
+            <p>For commissions, prints and collaborations, see the <a class="link" href="/contact.html">contact page</a>.</p>
 
-            <div class="prose">
-                <p>Flavio Leone is a photographer and visual artist based in Switzerland.</p>
-
-                <p>He began his photographic career at the age of sixteen when he became involved in the Swiss skateboarding scene. After completing an apprenticeship as a print technologist, he transitioned into the role of a photographer's assistant, gaining experience in both commercial and editorial photography. His artistic path has now led him to combine portraiture and various forms of physical movement with his interest in abstract photography.</p>
-
-                <div class="contact-info">
-                    <p><strong>Contact:</strong> <a href="mailto:hello@flavioleone.ch">hello@flavioleone.ch</a></p>
-                    <p><strong>Instagram:</strong> <a href="https://www.instagram.com/flavio.leone/" target="_blank" rel="noopener noreferrer">@flavio.leone</a></p>
-                </div>
+            <div class="meta-grid">
+                <div><h3>Based in</h3>Zürich, Switzerland</div>
+                <div><h3>Work</h3>Portrait · Movement<br>Editorial · Abstraction</div>
+                <div><h3>Selected</h3>Annabelle · LensCulture</div>
+                <div><h3>Elsewhere</h3><a class="link" href="https://www.instagram.com/flavio.leone/" rel="noopener">Instagram</a><br><a class="link" href="https://www.lensculture.com/flavio-leone" rel="noopener">LensCulture</a></div>
             </div>
         </article>
     </main>
 
     <footer class="site-footer">
-        <p>&copy; 2026 Flavio Leone. All rights reserved.</p>
+        <div class="wrap">
+            <div class="col"><span>studio</span><span>Flavio Leone</span><span>Zürich, Switzerland</span></div>
+            <div class="col"><span>contact</span><a href="mailto:hello@flavioleone.ch">hello@flavioleone.ch</a><a href="https://www.instagram.com/flavio.leone/" rel="noopener">Instagram</a></div>
+            <div class="col"><span>© 2026</span><span>All rights reserved</span></div>
+        </div>
     </footer>
 
-    <script src="/assets/app.js"></script>
+    <script src="/assets/app.js" defer></script>
 </body>
 </html>

@@ -3,42 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Flavio Leone — Photographer and visual artist based in Switzerland">
+    <meta name="description" content="Flavio Leone — photographer and visual artist based in Zürich. Portraiture, movement and abstraction.">
     <title>Flavio Leone — Photographer</title>
-    <link rel="preconnect" href="https://freight.cargo.site">
+    <link rel="preload" href="/assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body>
-    <nav class="site-nav" role="navigation">
-        <a href="/index.html" class="nav-logo" aria-label="Home">Flavio Leone</a>
+    <nav class="site-nav">
+        <a class="brand" href="/index.html">flavio leone</a>
+        <button class="nav-toggle" aria-label="Menu">Menu</button>
         <div class="nav-links">
-            <a href="/work.html">Work</a>
-            <a href="/about.html">About</a>
-            <a href="/contact.html">Contact</a>
+            <a href="/work.html">work</a>
+            <a href="/projects/recent.html">recent</a>
+            <a href="/projects/jepp.html">jepp</a>
+            <a href="/about.html">about</a>
+            <a href="/contact.html">contact</a>
         </div>
     </nav>
 
-    <main>
-        <header class="hero">
-            <h1 class="hero-title">Flavio Leone</h1>
-            <p class="hero-subtitle">Photographer and visual artist capturing movement, portraiture, and abstraction</p>
-        </header>
+    <header class="hero wrap">
+        <div class="hero-head">
+            <h1 class="hero-title">flavio<br>leone</h1>
+            <p class="hero-sub">Photographer and visual artist based in Zürich — working between portraiture, physical movement and abstraction, on commission and in personal series.</p>
+        </div>
+        <div class="hero-stage" id="hero-stage" aria-label="Featured work"></div>
+    </header>
 
-        <section class="featured-work" aria-label="Projects">
-            <h2 class="section-title">Selected Work</h2>
-            <div class="projects-grid" id="projects-grid">
-                <!-- Project cards populated by app.js from /assets/work.json -->
-            </div>
-            <div class="cta-container">
-                <a href="/work.html" class="btn-primary">View All Work</a>
-            </div>
-        </section>
+    <div class="marquee" aria-hidden="true" style="--mq:52s">
+        <div class="track">
+            <span class="serif">photographer | visual artist | zürich | movement | portraiture | abstraction | </span>
+            <span class="serif">photographer | visual artist | zürich | movement | portraiture | abstraction | </span>
+        </div>
+    </div>
+
+    <main class="wrap section">
+        <div class="section-top">
+            <h2 class="serif lower">selected work</h2>
+            <a class="label" href="/work.html">all work — 40</a>
+        </div>
+        <div class="cards" id="cards" data-fill></div>
     </main>
 
+    <div class="marquee rule" aria-hidden="true" style="--mq:34s">
+        <div class="track">
+            <span>recent | jepp | index | commissioned | personal | </span>
+            <span>recent | jepp | index | commissioned | personal | </span>
+        </div>
+    </div>
+
     <footer class="site-footer">
-        <p>&copy; 2026 Flavio Leone. All rights reserved.</p>
+        <div class="wrap">
+            <div class="col"><span>studio</span><span>Flavio Leone</span><span>Zürich, Switzerland</span></div>
+            <div class="col"><span>contact</span><a href="mailto:hello@flavioleone.ch">hello@flavioleone.ch</a><a href="https://www.instagram.com/flavio.leone/" rel="noopener">Instagram</a></div>
+            <div class="col"><span>© 2026</span><span>All rights reserved</span></div>
+        </div>
     </footer>
 
-    <script src="/assets/app.js"></script>
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+        <button class="lb-btn lb-close" aria-label="Close">Close</button>
+        <button class="lb-btn lb-prev" aria-label="Previous">&lsaquo;</button>
+        <button class="lb-btn lb-next" aria-label="Next">&rsaquo;</button>
+        <figure><img src="" alt=""><figcaption></figcaption></figure>
+    </div>
+
+    <script src="/assets/app.js" defer></script>
 </body>
 </html>

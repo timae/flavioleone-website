@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Flavio Leone — photographer and visual artist based in Zürich. Portraiture, movement and abstraction.">
+    <meta name="description" content="Flavio Leone — photographer and visual artist, Zürich. Movement, portraiture, abstraction.">
     <title>Flavio Leone — Photographer</title>
     <link rel="preload" href="/assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/assets/styles.css">
@@ -11,7 +11,6 @@
 <body>
     <nav class="site-nav">
         <a class="brand" href="/index.html">flavio leone</a>
-        <button class="nav-toggle" aria-label="Menu">Menu</button>
         <div class="nav-links">
             <a href="/work.html">work</a>
             <a href="/projects/recent.html">recent</a>
@@ -21,41 +20,55 @@
         </div>
     </nav>
 
-    <header class="hero wrap">
-        <div class="hero-head">
-            <h1 class="hero-title">flavio<br>leone</h1>
-            <p class="hero-sub">Photographer and visual artist based in Zürich — working between portraiture, physical movement and abstraction, on commission and in personal series.</p>
+    <section class="hero">
+        <div class="hero-montage" id="hero-montage" aria-hidden="true"></div>
+        <h1 class="hero-title">flavio<br>leone<em>.</em></h1>
+        <div class="hero-foot">
+            <p>Photographer &amp; visual artist, Zürich — portraiture, physical movement and abstraction.</p>
+            <span class="scrollcue">scroll &#8595;</span>
         </div>
-        <div class="hero-stage" id="hero-stage" aria-label="Featured work"></div>
-    </header>
+    </section>
 
-    <div class="marquee" aria-hidden="true" style="--mq:52s">
+    <div class="marquee" aria-hidden="true" style="--mq:40s">
         <div class="track">
-            <span class="serif">photographer | visual artist | zürich | movement | portraiture | abstraction | </span>
-            <span class="serif">photographer | visual artist | zürich | movement | portraiture | abstraction | </span>
+            <span class="serif">movement <em>·</em> portraiture <em>·</em> abstraction <em>·</em> </span>
+            <span class="serif">movement <em>·</em> portraiture <em>·</em> abstraction <em>·</em> </span>
         </div>
     </div>
 
-    <main class="wrap section">
-        <div class="section-top">
-            <h2 class="serif lower">selected work</h2>
-            <a class="label" href="/work.html">all work — 40</a>
+    <section class="section wrap">
+        <div class="sec-head">
+            <h2 class="serif">selected</h2>
+            <a class="label" href="/work.html">all work — 40 &#8599;</a>
         </div>
-        <div class="cards" id="cards" data-fill></div>
-    </main>
+        <div class="collage" id="collage"></div>
+    </section>
 
-    <div class="marquee rule" aria-hidden="true" style="--mq:34s">
+    <section class="section wrap">
+        <div class="reel-head"><span class="n serif">recent</span><span class="label">selected · ongoing</span></div>
+        <div class="reel" data-reel="recent" aria-label="recent"></div>
+    </section>
+
+    <section class="section wrap">
+        <div class="reel-head"><span class="n serif">jepp</span><span class="label">commissioned · ep campaign · 2019</span></div>
+        <div class="reel" data-reel="jepp" aria-label="jepp"></div>
+    </section>
+
+    <div class="marquee small rev" aria-hidden="true" style="--mq:28s">
         <div class="track">
-            <span>recent | jepp | index | commissioned | personal | </span>
-            <span>recent | jepp | index | commissioned | personal | </span>
+            <span>recent — jepp — index — commissioned — personal — </span>
+            <span>recent — jepp — index — commissioned — personal — </span>
         </div>
     </div>
 
     <footer class="site-footer">
         <div class="wrap">
-            <div class="col"><span>studio</span><span>Flavio Leone</span><span>Zürich, Switzerland</span></div>
-            <div class="col"><span>contact</span><a href="mailto:hello@flavioleone.ch">hello@flavioleone.ch</a><a href="https://www.instagram.com/flavio.leone/" rel="noopener">Instagram</a></div>
-            <div class="col"><span>© 2026</span><span>All rights reserved</span></div>
+            <div class="big serif">flavio leone</div>
+            <div class="row">
+                <div class="col"><span>studio</span>Zürich, Switzerland</div>
+                <div class="col"><span>contact</span><a href="mailto:hello@flavioleone.ch">hello@flavioleone.ch</a><a href="https://www.instagram.com/flavio.leone/" rel="noopener">Instagram</a></div>
+                <div class="col"><span>© 2026</span>All rights reserved</div>
+            </div>
         </div>
     </footer>
 
@@ -63,7 +76,7 @@
         <button class="lb-btn lb-close" aria-label="Close">Close</button>
         <button class="lb-btn lb-prev" aria-label="Previous">&lsaquo;</button>
         <button class="lb-btn lb-next" aria-label="Next">&rsaquo;</button>
-        <figure><img src="" alt=""><figcaption></figcaption></figure>
+        <img src="" alt=""><figcaption></figcaption>
     </div>
 
     <script src="/assets/app.js" defer></script>

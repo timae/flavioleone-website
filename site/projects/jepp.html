@@ -11,7 +11,6 @@
 <body>
     <nav class="site-nav">
         <a class="brand" href="/index.html">flavio leone</a>
-        <button class="nav-toggle" aria-label="Menu">Menu</button>
         <div class="nav-links">
             <a href="/work.html">work</a>
             <a href="/projects/recent.html">recent</a>
@@ -21,39 +20,36 @@
         </div>
     </nav>
 
-    <header class="wrap section" style="padding-bottom:0">
-        <h1 class="serif lower" style="font-size:clamp(2.6rem,9vw,6rem);line-height:.95;letter-spacing:-.02em">jepp</h1>
+    <header class="wrap" style="padding-top:clamp(7rem,14vw,12rem)">
+        <h1 class="serif" style="font-size:clamp(3.4rem,16vw,13rem);line-height:.82;text-transform:lowercase;letter-spacing:-.04em">jepp</h1>
     </header>
 
-    <div class="marquee rule" aria-hidden="true" style="--mq:30s">
+    <div class="marquee small" aria-hidden="true" style="--mq:24s">
         <div class="track">
-            <span>jepp | commissioned | ep campaign | 2019 | </span>
-            <span>jepp | commissioned | ep campaign | 2019 | </span>
+            <span>jepp — commissioned — ep campaign — 2019 — </span>
+            <span>jepp — commissioned — ep campaign — 2019 — </span>
         </div>
     </div>
 
     <main class="wrap section">
-        <p class="hero-sub" style="max-width:48ch;margin-bottom:clamp(1.6rem,3vw,2.4rem)">A commissioned portrait series shot for an EP campaign in 2019.</p>
-        <div class="masonry" data-project="jepp" data-fill></div>
-        <div class="next">
-            <a href="/work.html">all work</a>
-            <a href="/projects/recent.html">next — recent</a>
-        </div>
+        <p class="prose" style="max-width:46ch;margin-bottom:clamp(1.6rem,4vw,2.6rem)"><span style="color:#d9d3c8">A commissioned portrait series shot for an EP campaign in 2019. Drag to explore.</span></p>
+        <div class="reel" data-reel="jepp" aria-label="jepp"></div>
+        <div class="next"><a href="/work.html">all work</a><a href="/projects/recent.html">recent</a></div>
     </main>
 
     <footer class="site-footer">
-        <div class="wrap">
-            <div class="col"><span>studio</span><span>Flavio Leone</span><span>Zürich, Switzerland</span></div>
+        <div class="wrap"><div class="row">
+            <div class="col"><span>studio</span>Zürich, Switzerland</div>
             <div class="col"><span>contact</span><a href="mailto:hello@flavioleone.ch">hello@flavioleone.ch</a><a href="https://www.instagram.com/flavio.leone/" rel="noopener">Instagram</a></div>
-            <div class="col"><span>© 2026</span><span>All rights reserved</span></div>
-        </div>
+            <div class="col"><span>© 2026</span>All rights reserved</div>
+        </div></div>
     </footer>
 
     <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
         <button class="lb-btn lb-close" aria-label="Close">Close</button>
         <button class="lb-btn lb-prev" aria-label="Previous">&lsaquo;</button>
         <button class="lb-btn lb-next" aria-label="Next">&rsaquo;</button>
-        <figure><img src="" alt=""><figcaption></figcaption></figure>
+        <img src="" alt=""><figcaption></figcaption>
     </div>
 
     <script src="/assets/app.js" defer></script>

@@ -4,21 +4,24 @@ A static portfolio for Flavio Leone (photographer & visual artist, Switzerland).
 Served by nginx and packaged for
 [deplo.io](https://guides.deplo.io/docker/quick-start.html).
 
-## Design — "Editorial Index"
+## Design — "STUDIO / KINETIC"  (branch `artsy`)
 
-A new design that fuses both existing sites rather than copying either:
+> This is the **experimental** cut. The calmer, safe-to-ship `main` branch is the
+> "Editorial Index" design. Same content, Dockerfile and deploy — only the
+> front-end (`styles.css`, `app.js`, HTML) differs.
 
-- **From flavioleone.ch:** its *laufschrift* running-text **marquees**, the
-  lowercase editorial voice, work organised into **named projects**, and a
-  **serif/grotesque** type pairing — here the self-hosted **Fraunces** variable
-  serif (in `assets/fonts/`, nothing loaded from Google) set against a system
-  grotesque.
-- **From flavioleone.com:** the restraint, dark-mode support, the JSON-driven
-  galleries and the keyboard/swipe lightbox.
-- **New:** a warm **paper-and-ink** palette with a subtle film-grain overlay, a
-  cinematic auto-advancing **hero slideshow**, a **natural-ratio masonry** (no
-  forced crops — built from each photo's real dimensions), and a **grid ⇄ index**
-  toggle on the Work page with a cursor-following thumbnail preview.
+A bolder direction inspired by the photographs themselves — bold light, movement,
+abstraction:
+
+- **Black canvas, vivid photo colour**, a hot-red accent pulled from the work, and
+  a film-grain overlay.
+- A giant **Fraunces** wordmark over a dimmed, slowly-cycling **photo montage**.
+- A **broken / overlapping collage** (varied column spans and offsets) where images
+  sit **grayscale and bloom into colour** on hover.
+- **Drag-scroll reels** for each project, a **custom cursor** that swells to "view"
+  over imagery, scroll-reveal, and a **collage ⇄ index** toggle on Work.
+- Self-hosted **Fraunces** serif + system grotesque; kinetic *laufschrift* marquees
+  carried over from flavioleone.ch.
 
 Everything is self-contained — **no external services, fonts or CDNs at runtime**.
 The photographs are Flavio's real images (extracted from the live flavioleone.ch)

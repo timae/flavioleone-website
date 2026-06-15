@@ -4,6 +4,7 @@
 // ========================================
 
 let projects = [];
+let allWork = [];       // full portfolio for the "All Work" page
 let currentList = [];   // image set the lightbox is currently navigating
 let currentIndex = 0;
 
@@ -33,6 +34,7 @@ async function loadManifest() {
         if (!response.ok) throw new Error('Failed to load manifest');
         const data = await response.json();
         projects = data.projects || [];
+        allWork = (data.all && data.all.length) ? data.all : allImages();
         render();
     } catch (error) {
         console.error('Error loading manifest:', error);
@@ -56,9 +58,9 @@ function render() {
     const projectsGrid = document.getElementById('projects-grid');
     if (projectsGrid) renderProjectCards(projectsGrid, projects);
 
-    // Work: every image, flat
+    // Work: the full portfolio
     const workGallery = document.getElementById('work-gallery');
-    if (workGallery) renderGallery(workGallery, allImages());
+    if (workGallery) renderGallery(workGallery, allWork);
 
     // Project pages: a grid tagged with data-project="<slug>"
     document.querySelectorAll('[data-project]').forEach(el => {

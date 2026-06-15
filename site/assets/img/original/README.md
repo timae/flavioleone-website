@@ -1,15 +1,9 @@
-# Photo originals
+# Photo originals (optional, currently empty)
 
-Drop Flavio's full-size images here (e.g. `sample-001.jpg`) and point
-`assets/work.json` at them:
+The live site loads Flavio's photos directly from his Cargo CDN
+(`freight.cargo.site`) via the URLs in `assets/work.json`, so this folder is
+empty by default.
 
-```json
-{ "id": "img-001", "src": "assets/img/original/sample-001.jpg", "alt": "Portrait" }
-```
-
-Then remove the `picsum.photos` placeholder entries and the
-`<link rel="preconnect" href="https://picsum.photos">` tags in
-`index.html` / `work.html`.
-
-Order in `work.json` is the display order. The first three images appear
-on the home page; the full list appears on `work.html`.
+To self-host the images instead, download them here and rewrite the `src`
+values in `work.json` to `/assets/img/original/<file>`. See the "Self-hosting
+the photos" section of the top-level `README.md` for a ready-made script.

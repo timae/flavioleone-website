@@ -1,44 +1,286 @@
 {
   "projects": [
     {
-      "slug": "napule",
-      "title": "napulé",
-      "meta": "Documentary · Naples · 2024",
-      "description": "A documentary series made over repeated visits to Naples — its streets, light, and the people who carry the city.",
+      "slug": "recent",
+      "title": "recent",
+      "meta": "Selected · ongoing",
+      "description": "A rolling selection of recent commissioned and personal work.",
       "images": [
-        { "src": "https://picsum.photos/seed/fl-nap-1/1000/1250", "alt": "napulé — street scene" },
-        { "src": "https://picsum.photos/seed/fl-nap-2/1000/1250", "alt": "napulé — portrait on the street" },
-        { "src": "https://picsum.photos/seed/fl-nap-3/1000/1250", "alt": "napulé — alley light" },
-        { "src": "https://picsum.photos/seed/fl-nap-4/1000/1250", "alt": "napulé — market" },
-        { "src": "https://picsum.photos/seed/fl-nap-5/1000/1250", "alt": "napulé — rooftops" }
+        {
+          "src": "https://freight.cargo.site/w/1200/i/H2770966477490783321405190863047/volley_favs28.jpg",
+          "alt": "Volley — Flavio Leone"
+        },
+        {
+          "src": "https://freight.cargo.site/w/1200/i/J2665380196107888810640231659719/P_ALBUM-COVR_low-res.jpg",
+          "alt": "Album Covr — Flavio Leone"
+        },
+        {
+          "src": "https://freight.cargo.site/w/1200/i/W2665473471368321248187015002311/2507_ZeitCampus_Nina-Christ_255-1.jpg",
+          "alt": "Zeitcampus Nina Christ — Flavio Leone"
+        },
+        {
+          "src": "https://freight.cargo.site/w/1200/i/Y2770965769338725075769213876423/volley_favs2.jpg",
+          "alt": "Volley — Flavio Leone"
+        },
+        {
+          "src": "https://freight.cargo.site/w/1200/i/P2557173765446481412052427765959/buz_600mm_headspin3-copy.jpg",
+          "alt": "Buz — Flavio Leone"
+        },
+        {
+          "src": "https://freight.cargo.site/w/1200/i/F2770966152994108320780468385991/volley_favs10.jpg",
+          "alt": "Volley — Flavio Leone"
+        },
+        {
+          "src": "https://freight.cargo.site/w/1200/i/G2665380724311958617239532632263/600mm_random.jpg",
+          "alt": "Photograph by Flavio Leone"
+        },
+        {
+          "src": "https://freight.cargo.site/w/1200/i/W2263782238116505621724387375303/2502_Atef-Abu-Saif_010_0180.jpg",
+          "alt": "Atef Abu Saif — Flavio Leone"
+        },
+        {
+          "src": "https://freight.cargo.site/w/1200/i/Z2665506802495040128796477126855/2508_Coucou-Magazin_010_208.jpg",
+          "alt": "Coucou Magazin — Flavio Leone"
+        },
+        {
+          "src": "https://freight.cargo.site/w/1200/i/W2665466582542427385797221316807/060_0327-2-1.jpg",
+          "alt": "Photograph by Flavio Leone"
+        },
+        {
+          "src": "https://freight.cargo.site/w/1200/i/J2665472816103078261876322498759/2507_ZeitCampus_Erich-Seifritz_639.jpg",
+          "alt": "Zeitcampus Erich Seifritz — Flavio Leone"
+        },
+        {
+          "src": "https://freight.cargo.site/w/1200/i/M2665510821524064956043906808007/DSCF4409.jpg",
+          "alt": "Photograph by Flavio Leone"
+        },
+        {
+          "src": "https://freight.cargo.site/w/1200/i/W2208193715726962203624122644679/2501_ALELEFI-ALELEFI_030_0781-1.jpg",
+          "alt": "Alelefi Alelefi — Flavio Leone"
+        },
+        {
+          "src": "https://freight.cargo.site/w/1200/i/R2208203979126429934144450754759/2502_Dominic-Limburg_080_521.jpg",
+          "alt": "Dominic Limburg — Flavio Leone"
+        },
+        {
+          "src": "https://freight.cargo.site/w/1200/i/P2665379891939525779243435063495/2509_lucca-fries_010_0352-1.jpg",
+          "alt": "Lucca Fries — Flavio Leone"
+        },
+        {
+          "src": "https://freight.cargo.site/w/1200/i/Z2234098946460465081819385329863/CAK_7707.jpg",
+          "alt": "Cak — Flavio Leone"
+        },
+        {
+          "src": "https://freight.cargo.site/w/1200/i/H2447382582140591582410889787591/IMG_8227-1-copy.jpg",
+          "alt": "Photograph by Flavio Leone"
+        },
+        {
+          "src": "https://freight.cargo.site/w/1200/i/C2234098946312891129229708916935/2405_Andryy_030_351.jpg",
+          "alt": "Andryy — Flavio Leone"
+        },
+        {
+          "src": "https://freight.cargo.site/w/1200/i/D2557296958817044212467433240775/IMG_0361.jpg",
+          "alt": "Photograph by Flavio Leone"
+        }
       ]
     },
     {
       "slug": "jepp",
       "title": "jepp",
-      "meta": "Portraits · 2023",
-      "description": "An intimate portrait series — close, quiet, and unguarded.",
+      "meta": "Commissioned · EP campaign · 2019",
+      "description": "A commissioned portrait series shot for an EP campaign in 2019.",
       "images": [
-        { "src": "https://picsum.photos/seed/fl-jepp-1/1000/1250", "alt": "jepp — portrait" },
-        { "src": "https://picsum.photos/seed/fl-jepp-2/1000/1250", "alt": "jepp — portrait in light" },
-        { "src": "https://picsum.photos/seed/fl-jepp-3/1000/1250", "alt": "jepp — close portrait" },
-        { "src": "https://picsum.photos/seed/fl-jepp-4/1000/1250", "alt": "jepp — profile" },
-        { "src": "https://picsum.photos/seed/fl-jepp-5/1000/1250", "alt": "jepp — study" }
+        {
+          "src": "https://freight.cargo.site/w/1200/i/T2211865894515236406609653823687/0619_JEPP__020_097.jpg",
+          "alt": "Jepp — Flavio Leone"
+        },
+        {
+          "src": "https://freight.cargo.site/w/1200/i/H2211865895013298496599811717319/0619_JEPP__030_261.jpg",
+          "alt": "Jepp — Flavio Leone"
+        },
+        {
+          "src": "https://freight.cargo.site/w/1200/i/H2211865895031745240673521268935/0619_JEPP__040_041.jpg",
+          "alt": "Jepp — Flavio Leone"
+        },
+        {
+          "src": "https://freight.cargo.site/w/1200/i/V2211865895179319193263197681863/0619_JEPP__140_062.jpg",
+          "alt": "Jepp — Flavio Leone"
+        },
+        {
+          "src": "https://freight.cargo.site/w/1200/i/U2211865895123978961042069027015/0619_JEPP__080_198.jpg",
+          "alt": "Jepp — Flavio Leone"
+        },
+        {
+          "src": "https://freight.cargo.site/w/1200/i/C2211865895087085472894649923783/0619_JEPP__060_266.jpg",
+          "alt": "Jepp — Flavio Leone"
+        },
+        {
+          "src": "https://freight.cargo.site/w/1200/i/P2211865895160872449189488130247/0619_JEPP__120_092.jpg",
+          "alt": "Jepp — Flavio Leone"
+        }
       ]
+    }
+  ],
+  "all": [
+    {
+      "src": "https://freight.cargo.site/w/1200/i/U1730226301834025729001469016263/DSCF9659.jpg",
+      "alt": "Photograph by Flavio Leone"
     },
     {
-      "slug": "recent",
-      "title": "recent",
-      "meta": "Editorial & Movement · ongoing",
-      "description": "Selected editorial, lifestyle, and movement work — portraiture combined with physical motion and abstraction.",
-      "images": [
-        { "src": "https://picsum.photos/seed/fl-rec-1/1000/1250", "alt": "recent — editorial portrait" },
-        { "src": "https://picsum.photos/seed/fl-rec-2/1000/1250", "alt": "recent — movement study" },
-        { "src": "https://picsum.photos/seed/fl-rec-3/1000/1250", "alt": "recent — abstraction" },
-        { "src": "https://picsum.photos/seed/fl-rec-4/1000/1250", "alt": "recent — lifestyle" },
-        { "src": "https://picsum.photos/seed/fl-rec-5/1000/1250", "alt": "recent — light and form" },
-        { "src": "https://picsum.photos/seed/fl-rec-6/1000/1250", "alt": "recent — portrait, studio" }
-      ]
+      "src": "https://freight.cargo.site/w/1200/i/E2665344400901990052056283773127/IMG_0239.jpg",
+      "alt": "Photograph by Flavio Leone"
+    },
+    {
+      "src": "https://freight.cargo.site/w/1200/i/L2665334953346672469488294983879/2506_Dino_i-love-you-i-leave-you_040_0570-1.jpg",
+      "alt": "Dino Love You Leave You — Flavio Leone"
+    },
+    {
+      "src": "https://freight.cargo.site/w/1200/i/P2665343752240681444133610748103/IMG_5847-1.jpg",
+      "alt": "Photograph by Flavio Leone"
+    },
+    {
+      "src": "https://freight.cargo.site/w/1200/i/E2665348223897465607992308431047/zezzanerra_postkarten_pond-1-1.jpg",
+      "alt": "Zezzanerra Postkarten Pond — Flavio Leone"
+    },
+    {
+      "src": "https://freight.cargo.site/w/1200/i/U2590846070968898264732937779399/2506_Lukas-Britschgi_070_0784.jpg",
+      "alt": "Lukas Britschgi — Flavio Leone"
+    },
+    {
+      "src": "https://freight.cargo.site/w/1200/i/C2367803884283708678713899251911/flagfootball_6.jpg",
+      "alt": "Flagfootball — Flavio Leone"
+    },
+    {
+      "src": "https://freight.cargo.site/w/1200/i/U2310252415301723917825960343751/2504_CYPHER25_Nemo_017.jpg",
+      "alt": "Nemo — Flavio Leone"
+    },
+    {
+      "src": "https://freight.cargo.site/w/1200/i/M2234098946442018337745675778247/2405_Andryy_070_1060.jpg",
+      "alt": "Andryy — Flavio Leone"
+    },
+    {
+      "src": "https://freight.cargo.site/w/1200/i/F2263803963308169831306064328903/2502_Atef-Abu-Saif_010_0003-2.jpg",
+      "alt": "Atef Abu Saif — Flavio Leone"
+    },
+    {
+      "src": "https://freight.cargo.site/w/1200/i/L2208203979107983190070741203143/2502_Dominic-Limburg_050_413.jpg",
+      "alt": "Dominic Limburg — Flavio Leone"
+    },
+    {
+      "src": "https://freight.cargo.site/w/1200/i/F2208193169887805062558490327239/2501_ALELEFI-ALELEFI_010_0542.jpg",
+      "alt": "Alelefi Alelefi — Flavio Leone"
+    },
+    {
+      "src": "https://freight.cargo.site/w/1200/i/E2208286776488654552076239796423/1911_SerpentineTrick7376.jpg",
+      "alt": "Photograph by Flavio Leone"
+    },
+    {
+      "src": "https://freight.cargo.site/w/1200/i/A1978801866649731946841500842183/2407_Softloft_030_615-1.jpg",
+      "alt": "Softloft — Flavio Leone"
+    },
+    {
+      "src": "https://freight.cargo.site/w/1200/i/V1733438088056531713381556844743/2403_Cypher-_Cachita_6993_high-res.jpg",
+      "alt": "Cypher Cachita — Flavio Leone"
+    },
+    {
+      "src": "https://freight.cargo.site/w/1200/i/D1994373654336982427679328598215/2311_TEANDER_010_0579-1-2.jpg",
+      "alt": "Teander — Flavio Leone"
+    },
+    {
+      "src": "https://freight.cargo.site/w/1200/i/B2208358703442850950001195251911/2310_Swiss_Ski_Wendy-Holdener_1126-1.jpg",
+      "alt": "Swiss Ski Wendy Holdener — Flavio Leone"
+    },
+    {
+      "src": "https://freight.cargo.site/w/1200/i/K2265512092868318596184842467527/2310_Swiss_Ski_Jasmine-Flury_1983-copy.jpg",
+      "alt": "Swiss Ski Jasmine Flury — Flavio Leone"
+    },
+    {
+      "src": "https://freight.cargo.site/w/1200/i/X1875526512752120166592253556935/2310_Laurin-Buser---Bacchus_020_0853-1.jpg",
+      "alt": "Laurin Buser Bacchus — Flavio Leone"
+    },
+    {
+      "src": "https://freight.cargo.site/w/1200/i/V1994346890306494019891370424519/2309_COLD_010_0568.jpg",
+      "alt": "Cold — Flavio Leone"
+    },
+    {
+      "src": "https://freight.cargo.site/w/1200/i/L2208407727104072870883959797959/IMG_9812.jpg",
+      "alt": "Photograph by Flavio Leone"
+    },
+    {
+      "src": "https://freight.cargo.site/w/1200/i/Q2051905029520455369710916368583/2212_Marlen-Reusser020_032.jpg",
+      "alt": "Marlen — Flavio Leone"
+    },
+    {
+      "src": "https://freight.cargo.site/w/1200/i/H2208444564071396448141125646535/DSCF1199-_low-res.jpg",
+      "alt": "Photograph by Flavio Leone"
+    },
+    {
+      "src": "https://freight.cargo.site/w/1200/i/Z1986732308626516453095591147719/call---response_all-copy.jpg",
+      "alt": "Call Response — Flavio Leone"
+    },
+    {
+      "src": "https://freight.cargo.site/w/1200/i/W1960827051145236584723648903367/020_0156.jpg",
+      "alt": "Photograph by Flavio Leone"
+    },
+    {
+      "src": "https://freight.cargo.site/w/1200/i/F1951871584788126131180840188103/IMG_4723.jpg",
+      "alt": "Photograph by Flavio Leone"
+    },
+    {
+      "src": "https://freight.cargo.site/w/1200/i/V2265400362064715525926987004103/Screenshot-2025-03-18-at-16.10.20.png",
+      "alt": "Photograph by Flavio Leone"
+    },
+    {
+      "src": "https://freight.cargo.site/w/1200/i/F2208491490430050908616419211463/2105_SI_Sport_Fechter_521.jpg",
+      "alt": "Si Sport Fechter — Flavio Leone"
+    },
+    {
+      "src": "https://freight.cargo.site/w/1200/i/N2211222582393474978232406407367/DSCF2839.jpg",
+      "alt": "Photograph by Flavio Leone"
+    },
+    {
+      "src": "https://freight.cargo.site/w/1200/i/C2243046043548236037412335417543/charlotte-gainsburg_1-3.jpg",
+      "alt": "Charlotte Gainsburg — Flavio Leone"
+    },
+    {
+      "src": "https://freight.cargo.site/w/1200/i/A1730226301612664800116954396871/A4541720.jpg",
+      "alt": "Photograph by Flavio Leone"
+    },
+    {
+      "src": "https://freight.cargo.site/w/1200/i/T2052331976626583022152926394567/Anderson.-Paak.jpg",
+      "alt": "Anderson Paak — Flavio Leone"
+    },
+    {
+      "src": "https://freight.cargo.site/w/1200/i/J1730226301446644103453568432327/1912_Nurit0325.jpg",
+      "alt": "Photograph by Flavio Leone"
+    },
+    {
+      "src": "https://freight.cargo.site/w/1200/i/F2211820177654250627048531065031/190701_SI_Sport_Okafor-_020_150.jpg",
+      "alt": "Si Sport Okafor — Flavio Leone"
+    },
+    {
+      "src": "https://freight.cargo.site/w/1200/i/H2212874195243405825482263132359/9H6A3010.jpg",
+      "alt": "Photograph by Flavio Leone"
+    },
+    {
+      "src": "https://freight.cargo.site/w/1200/i/T2211865894515236406609653823687/0619_JEPP__020_097.jpg",
+      "alt": "Jepp — Flavio Leone"
+    },
+    {
+      "src": "https://freight.cargo.site/w/1200/i/Y1965664137246971098911591397575/DSCF1093.jpg",
+      "alt": "Photograph by Flavio Leone"
+    },
+    {
+      "src": "https://freight.cargo.site/w/1200/i/Y1951794687469419536659459111111/minotaur0117_1.jpg",
+      "alt": "Photograph by Flavio Leone"
+    },
+    {
+      "src": "https://freight.cargo.site/w/1200/i/C1965641960829500102320572364999/diabolo_stalamuerte27036.jpg",
+      "alt": "Diabolo — Flavio Leone"
+    },
+    {
+      "src": "https://freight.cargo.site/w/1200/i/N2213045123604096301504466811079/_O9I5030.jpg",
+      "alt": "Photograph by Flavio Leone"
     }
   ]
 }

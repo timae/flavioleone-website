@@ -7,8 +7,10 @@ dark-mode support, and a keyboard/swipe lightbox. Served by nginx and packaged
 for [deplo.io](https://guides.deplo.io/docker/quick-start.html).
 
 Best of both existing sites: the **flavioleone.com** design system + the
-**flavioleone.ch** idea of organising work into named projects (`napulé`,
-`jepp`, `recent`).
+**flavioleone.ch** idea of organising work into named projects (`recent`,
+`jepp`). The images are Flavio's **real photographs**, scraped from the live
+flavioleone.ch (a Cargo site) and served from his Cargo CDN — see
+[Images](#images) below.
 
 ## Structure
 
@@ -18,35 +20,53 @@ Best of both existing sites: the **flavioleone.com** design system + the
 ├── nginx/default.conf.template    # rendered at startup (clean URLs, gzip, caching)
 └── site/                          # served at the web root
     ├── index.html                 # Hero + project cards ("Selected Work")
-    ├── work.html                  # Full flat gallery (every image, lightbox)
+    ├── work.html                  # Full portfolio (40 images, lightbox)
     ├── projects/                  # One page per project (lightbox scoped to the project)
-    │   ├── napule.html · jepp.html · recent.html
+    │   ├── jepp.html · recent.html
     ├── about.html  contact.html  404.html
     ├── robots.txt  sitemap.xml
     └── assets/
         ├── styles.css             # Design system (light/dark + 6 bg themes)
         ├── app.js                 # Project cards + galleries + lightbox + bg theme
         ├── work.json              # Content manifest (the only thing you edit)
-        └── img/original/          # Drop full-size photos here
+        └── img/original/          # (empty) drop self-hosted photos here to localise
 ```
 
-The site is **data-driven** from `assets/work.json`, which is grouped by project:
+The site is **data-driven** from `assets/work.json`:
 
 ```json
 {
   "projects": [
-    { "slug": "napule", "title": "napulé", "meta": "Documentary · Naples · 2024",
+    { "slug": "jepp", "title": "jepp", "meta": "Commissioned · EP campaign · 2019",
       "description": "…",
-      "images": [ { "src": "/assets/img/original/nap-01.jpg", "alt": "…" } ] }
-  ]
+      "images": [ { "src": "https://freight.cargo.site/w/1200/i/<hash>/<file>.jpg", "alt": "…" } ] }
+  ],
+  "all": [ { "src": "…", "alt": "…" } ]
 }
 ```
 
 `app.js` reads it and renders: project cards on the home page (cover = each
-project's first image), the full flat gallery on `work.html`, and each
-`projects/<slug>.html` page (matched by its `data-project="<slug>"` grid).
-To add a project, add an object to the array and a matching
+project's first image), the **`all`** list as the full gallery on `work.html`,
+and each `projects/<slug>.html` page (matched by its `data-project="<slug>"`
+grid). To add a project, add an object to `projects` and a matching
 `projects/<slug>.html` page (copy an existing one and change the title/meta/slug).
+
+## Images
+
+The galleries use Flavio's real photos, hotlinked from his Cargo CDN
+(`freight.cargo.site`, sized at `w/1200`). The data was extracted from the live
+flavioleone.ch:
+
+- **recent** (19) — the home slideshow reel
+- **jepp** (7) — the commissioned EP series
+- **all** (40) — the full `index` portfolio shown on `work.html`
+
+> **Trade-off:** hotlinking keeps the repo tiny but depends on his Cargo
+> subscription staying live. To make the site fully self-contained, download the
+> images into `site/assets/img/original/` and rewrite the `src` values to
+> `/assets/img/original/<file>` (a script can fetch every `src` in `work.json`).
+> napulé was intentionally omitted — it's a single-image stub on the live site
+> with no resolvable source file.
 
 ## Run with Docker
 
@@ -87,14 +107,21 @@ nctl create app flavioleone \
 deplo.io injects `$PORT`; the Dockerfile defaults it to `8080`, so the same
 image runs locally unchanged.
 
-## Adding Flavio's real photos
+## Self-hosting the photos (optional)
 
-1. Put image files in `site/assets/img/original/` (e.g. `nap-01.jpg`).
-2. Edit `site/assets/work.json` — replace the `picsum.photos` placeholder URLs
-   with `/assets/img/original/<file>` and set a meaningful `alt`. Order within a
-   project = display order; the first image is the project's cover.
-3. Remove the `<link rel="preconnect" href="https://picsum.photos">` tags from
-   the HTML once no external images remain.
+To stop depending on his Cargo CDN, download every image referenced in
+`work.json` into `site/assets/img/original/` and rewrite the `src` values, e.g.:
+
+```powershell
+$ua = "Mozilla/5.0"
+$j = Get-Content site/assets/work.json -Raw | ConvertFrom-Json
+$all = @($j.projects.images; $j.all) | Sort-Object src -Unique
+foreach ($img in $all) {
+  $file = ($img.src -split '/')[-1]
+  Invoke-WebRequest -Uri $img.src -UserAgent $ua -OutFile "site/assets/img/original/$file"
+}
+# then replace  https://freight.cargo.site/w/1200/i/<hash>/  ->  /assets/img/original/
+```
 
 Bio text and contact details (`hello@flavioleone.ch`, `@flavio.leone`) mirror the
 current flavioleone.com — adjust to taste.

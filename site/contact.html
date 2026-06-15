@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get in touch with Flavio Leone">
+    <title>Contact — Flavio Leone</title>
+    <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+    <nav class="site-nav" role="navigation">
+        <a href="/index.html" class="nav-logo" aria-label="Home">Flavio Leone</a>
+        <div class="nav-links">
+            <a href="/work.html">Work</a>
+            <a href="/about.html">About</a>
+            <a href="/contact.html" aria-current="page">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+        <article class="contact-content">
+            <header class="page-header">
+                <h1>Contact</h1>
+            </header>
+
+            <div class="prose">
+                <p>For inquiries, collaborations, or commissions:</p>
+
+                <div class="contact-info">
+                    <p><strong>Email:</strong> <a href="mailto:hello@flavioleone.ch">hello@flavioleone.ch</a></p>
+                    <p><strong>Instagram:</strong> <a href="https://www.instagram.com/flavio.leone/" target="_blank" rel="noopener noreferrer">@flavio.leone</a></p>
+                </div>
+
+                <div class="cta-container">
+                    <a href="mailto:hello@flavioleone.ch" class="btn-primary">Send Email</a>
+                </div>
+            </div>
+
+            <div class="form-placeholder">
+                <p class="form-note"><em>This form is a visual placeholder. Please use the email link above to contact directly.</em></p>
+                <form class="contact-form" onsubmit="return false;">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="6" disabled></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary" disabled>Send Message</button>
+                </form>
+            </div>
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Flavio Leone. All rights reserved.</p>
+    </footer>
+
+    <script src="/assets/app.js"></script>
+</body>
+</html>

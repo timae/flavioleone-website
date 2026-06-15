@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="napulé — a documentary series from Naples by Flavio Leone">
+    <title>napulé — Flavio Leone</title>
+    <link rel="preconnect" href="https://picsum.photos">
+    <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+    <nav class="site-nav" role="navigation">
+        <a href="/index.html" class="nav-logo" aria-label="Home">Flavio Leone</a>
+        <div class="nav-links">
+            <a href="/work.html" aria-current="page">Work</a>
+            <a href="/about.html">About</a>
+            <a href="/contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+        <header class="page-header">
+            <h1>napulé</h1>
+        </header>
+        <div class="project-intro">
+            <p class="meta">Documentary · Naples · 2024</p>
+            <p class="desc">A documentary series made over repeated visits to Naples — its streets, light, and the people who carry the city.</p>
+        </div>
+
+        <section class="full-gallery" aria-label="napulé">
+            <div class="gallery-grid" data-project="napule">
+                <!-- Populated by app.js -->
+            </div>
+        </section>
+
+        <nav class="next-project">
+            <span>Next project</span>
+            <a href="/projects/jepp.html">jepp &rsaquo;</a>
+        </nav>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Flavio Leone. All rights reserved.</p>
+    </footer>
+
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+        <button class="lightbox-close" aria-label="Close viewer">&times;</button>
+        <button class="lightbox-prev" aria-label="Previous image">&lsaquo;</button>
+        <button class="lightbox-next" aria-label="Next image">&rsaquo;</button>
+        <div class="lightbox-content">
+            <img src="" alt="" id="lightbox-img">
+            <div class="lightbox-counter" id="lightbox-counter"></div>
+        </div>
+    </div>
+
+    <script src="/assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+# Rendered at container start by nginx's envsubst entrypoint.
+# Only ${PORT} is substituted (it is set in the environment); nginx's own
+# $uri / $host variables are left untouched.
+
+server {
+    listen       ${PORT} default_server;
+    server_name  _;
+
+    root   /usr/share/nginx/html;
+    index  index.html;
+
+    # Clean URLs too: /about -> /about.html (links in the site use .html directly)
+    location / {
+        try_files $uri $uri.html $uri/ =404;
+    }
+
+    # Long-cache immutable static assets, but never the work.json manifest
+    location ~* \.(css|js|jpe?g|png|gif|webp|avif|svg|ico|woff2?)$ {
+        expires 7d;
+        add_header Cache-Control "public";
+    }
+
+    # Friendly 404
+    error_page 404 /404.html;
+
+    # Basic hardening
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header X-Frame-Options "SAMEORIGIN" always;
+    add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+
+    gzip            on;
+    gzip_types      text/css application/javascript application/json image/svg+xml text/plain;
+    gzip_min_length 512;
+}

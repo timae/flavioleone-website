@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Flavio Leone — Photographer and visual artist based in Switzerland">
+    <title>Flavio Leone — Photographer</title>
+    <link rel="preconnect" href="https://picsum.photos">
+    <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+    <nav class="site-nav" role="navigation">
+        <a href="/index.html" class="nav-logo" aria-label="Home">Flavio Leone</a>
+        <div class="nav-links">
+            <a href="/work.html">Work</a>
+            <a href="/about.html">About</a>
+            <a href="/contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+        <header class="hero">
+            <h1 class="hero-title">Flavio Leone</h1>
+            <p class="hero-subtitle">Photographer and visual artist capturing movement, portraiture, and abstraction</p>
+        </header>
+
+        <section class="featured-work" aria-label="Projects">
+            <h2 class="section-title">Selected Work</h2>
+            <div class="projects-grid" id="projects-grid">
+                <!-- Project cards populated by app.js from /assets/work.json -->
+            </div>
+            <div class="cta-container">
+                <a href="/work.html" class="btn-primary">View All Work</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Flavio Leone. All rights reserved.</p>
+    </footer>
+
+    <script src="/assets/app.js"></script>
+</body>
+</html>

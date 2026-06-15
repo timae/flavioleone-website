@@ -1,0 +1,44 @@
+{
+  "projects": [
+    {
+      "slug": "napule",
+      "title": "napulé",
+      "meta": "Documentary · Naples · 2024",
+      "description": "A documentary series made over repeated visits to Naples — its streets, light, and the people who carry the city.",
+      "images": [
+        { "src": "https://picsum.photos/seed/fl-nap-1/1000/1250", "alt": "napulé — street scene" },
+        { "src": "https://picsum.photos/seed/fl-nap-2/1000/1250", "alt": "napulé — portrait on the street" },
+        { "src": "https://picsum.photos/seed/fl-nap-3/1000/1250", "alt": "napulé — alley light" },
+        { "src": "https://picsum.photos/seed/fl-nap-4/1000/1250", "alt": "napulé — market" },
+        { "src": "https://picsum.photos/seed/fl-nap-5/1000/1250", "alt": "napulé — rooftops" }
+      ]
+    },
+    {
+      "slug": "jepp",
+      "title": "jepp",
+      "meta": "Portraits · 2023",
+      "description": "An intimate portrait series — close, quiet, and unguarded.",
+      "images": [
+        { "src": "https://picsum.photos/seed/fl-jepp-1/1000/1250", "alt": "jepp — portrait" },
+        { "src": "https://picsum.photos/seed/fl-jepp-2/1000/1250", "alt": "jepp — portrait in light" },
+        { "src": "https://picsum.photos/seed/fl-jepp-3/1000/1250", "alt": "jepp — close portrait" },
+        { "src": "https://picsum.photos/seed/fl-jepp-4/1000/1250", "alt": "jepp — profile" },
+        { "src": "https://picsum.photos/seed/fl-jepp-5/1000/1250", "alt": "jepp — study" }
+      ]
+    },
+    {
+      "slug": "recent",
+      "title": "recent",
+      "meta": "Editorial & Movement · ongoing",
+      "description": "Selected editorial, lifestyle, and movement work — portraiture combined with physical motion and abstraction.",
+      "images": [
+        { "src": "https://picsum.photos/seed/fl-rec-1/1000/1250", "alt": "recent — editorial portrait" },
+        { "src": "https://picsum.photos/seed/fl-rec-2/1000/1250", "alt": "recent — movement study" },
+        { "src": "https://picsum.photos/seed/fl-rec-3/1000/1250", "alt": "recent — abstraction" },
+        { "src": "https://picsum.photos/seed/fl-rec-4/1000/1250", "alt": "recent — lifestyle" },
+        { "src": "https://picsum.photos/seed/fl-rec-5/1000/1250", "alt": "recent — light and form" },
+        { "src": "https://picsum.photos/seed/fl-rec-6/1000/1250", "alt": "recent — portrait, studio" }
+      ]
+    }
+  ]
+}
